@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - Biblia + CBA</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        p {
-            margin: 15px 0;
-        }
-        .highlight {
-            background-color: #ecf0f1;
-            padding: 10px;
-            border-left: 4px solid #3498db;
-        }
-        .contact {
-            font-weight: bold;
-            color: #e74c3c;
-        }
-        .footer {
-            text-align: center;
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidad — Biblia con Comentario Bíblico</title>
+  <meta name="description" content="Política de privacidad de la app Biblia con Comentario Bíblico Adventista." />
+  <style>
+    :root {
+      --bg: #0f172a;        /* fondo oscuro elegante */
+      --card: #111827;      /* tarjetas */
+      --text: #e5e7eb;      /* texto principal */
+      --muted: #9ca3af;     /* texto secundario */
+      --brand: #38bdf8;     /* acento celeste */
+      --ok: #22c55e;        /* verde */
+      --warn: #f59e0b;      /* amarillo */
+      --err: #ef4444;       /* rojo */
+    }
+    * { box-sizing: border-box }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Inter, Arial;
+      background: linear-gradient(180deg, #0b1222 0%, var(--bg) 60%);
+      color: var(--text); line-height: 1.6;
+    }
+    .wrap { max-width: 980px; margin: auto; padding: 24px }
+    header {
+      text-align: center; padding: 28px 12px 8px;
+    }
+    h1 { font-size: clamp(28px, 4.5vw, 40px); margin: 0 0 8px }
+    .badge { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #0b192f; color: var(--brand); border: 1px solid #1f2a44 }
+    .card {
+      background: var(--card); border: 1px solid #1f2937; border-radius: 16px; padding: 18px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, .25);
+    }
+    h2 { margin: 0 0 12px; font-size: 22px }
+    p { margin: 15px 0 }
+    a { color: var(--brand); text-decoration: none }
+    a:hover { text-decoration: underline }
+    .highlight {
+      background: #0b192f; padding: 10px; border-left: 4px solid var(--brand);
+    }
+    .small { color: var(--muted); font-size: 14px }
+    footer { opacity: .8; text-align: center; margin: 28px 0 6px; font-size: 14px }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Política de Privacidad</h1>
-        <p>Esta aplicación móvil "Biblia + CBA" no recopila, almacena ni comparte información personal del usuario.</p>
-        <p>La aplicación puede utilizar servicios de terceros (por ejemplo, Google AdMob) para mostrar anuncios y servicios de análisis que pueden recopilar información anónima como ID de dispositivo, tipo de navegador y versión del sistema operativo, únicamente para mejorar la experiencia de usuario y la calidad de los servicios.</p>
-        <p class="highlight">La seguridad y privacidad de los usuarios es nuestra prioridad. No recopilamos información confidencial como nombres, direcciones, correos electrónicos o datos financieros.</p>
-        <p>Si tienes preguntas sobre nuestra política de privacidad, puedes contactarnos en: <span class="contact">adventistgo@gmail.com</span></p>
-        <div class="footer">Última actualización: 19 de Agosto del 2025</div>
+  <div class="wrap">
+    <header>
+      <span class="badge">Política de Privacidad</span>
+      <h1>Biblia con Comentario Bíblico</h1>
+      <p class="small">Información sobre la privacidad de los usuarios</p>
+    </header>
+
+    <div class="card">
+      <h2>Política de Privacidad</h2>
+      <p>Esta aplicación móvil "Biblia + CBA" no recopila, almacena ni comparte información personal del usuario.</p>
+      <p>La aplicación puede utilizar servicios de terceros (por ejemplo, Google AdMob) para mostrar anuncios y servicios de análisis que pueden recopilar información anónima como ID de dispositivo, tipo de navegador y versión del sistema operativo, únicamente para mejorar la experiencia de usuario y la calidad de los servicios.</p>
+      <p class="highlight">La seguridad y privacidad de los usuarios es nuestra prioridad. No recopilamos información confidencial como nombres, direcciones, correos electrónicos o datos financieros.</p>
+      <p>Si tienes preguntas sobre nuestra política de privacidad, puedes contactarnos en: <a href="mailto:adventistgo@gmail.com">adventistgo@gmail.com</a></p>
+      <p class="small">Última actualización: 19 de Agosto de 2025</p>
     </div>
+
+    <footer>
+      © <span id="y"></span> AdventistGo · Todos los derechos reservados
+    </footer>
+  </div>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
