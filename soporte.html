@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soporte — Biblia con Comentario Bíblico</title>
+  <meta name="description" content="Página oficial de soporte de la app Biblia con Comentario Bíblico Adventista." />
+  <style>
+    :root{
+      --bg:#0f172a;        /* fondo oscuro elegante */
+      --card:#111827;      /* tarjetas */
+      --text:#e5e7eb;      /* texto principal */
+      --muted:#9ca3af;     /* texto secundario */
+      --brand:#38bdf8;     /* acento celeste */
+      --ok:#22c55e;        /* verde */
+      --warn:#f59e0b;      /* amarillo */
+      --err:#ef4444;       /* rojo */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial;
+      background:linear-gradient(180deg,#0b1222 0%, var(--bg) 60%);
+      color:var(--text); line-height:1.6;
+    }
+    .wrap{max-width:980px;margin:auto;padding:24px}
+    header{
+      text-align:center; padding:28px 12px 8px;
+    }
+    h1{font-size:clamp(28px,4.5vw,40px);margin:0 0 8px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#0b192f;color:var(--brand);border:1px solid #1f2a44}
+    .grid{display:grid;gap:16px;margin-top:18px}
+    @media(min-width:780px){.grid{grid-template-columns:1.2fr 1fr}}
+    .card{
+      background:var(--card); border:1px solid #1f2937; border-radius:16px; padding:18px;
+      box-shadow:0 6px 24px rgba(0,0,0,.25);
+    }
+    h2{margin:0 0 12px;font-size:22px}
+    h3{margin:18px 0 8px;font-size:18px}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .list{padding-left:18px;margin:8px 0}
+    .kbd{
+      background:#0b192f;border:1px solid #1f2a44;color:var(--text);
+      padding:2px 6px;border-radius:6px;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .cta{
+      display:inline-flex;gap:8px;align-items:center;
+      background:var(--brand);color:#062436;border:none;border-radius:12px;
+      padding:10px 14px;font-weight:600;cursor:pointer;text-decoration:none;
+      box-shadow:0 8px 20px rgba(56,189,248,.35);
+    }
+    footer{opacity:.8;text-align:center;margin:28px 0 6px;font-size:14px}
+    .pill{display:inline-block;border:1px solid #334155;border-radius:999px;padding:4px 10px;margin:4px 6px 0 0;color:var(--muted)}
+    .ok{color:var(--ok)} .warn{color:var(--warn)} .err{color:var(--err)}
+    .hr{height:1px;border:0;background:#1f2937;margin:16px 0}
+    .small{color:var(--muted);font-size:14px}
+  </style>
+
+  <!-- JSON-LD opcional para enriquecer resultados (ajusta los datos TU-... ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Biblia con Comentario Bíblico Adventista",
+    "applicationCategory": "MobileApplication",
+    "operatingSystem": "Android, iOS",
+    "publisher": { "@type": "Organization", "name": "TU-NOMBRE-LEGAL" },
+    "supportUrl": "https://sites.google.com/view/TU-SUBRUTA-SOPORTE",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">Soporte oficial</span>
+      <h1>Biblia con Comentario Bíblico</h1>
+      <p class="small">Centro de ayuda y contacto para usuarios</p>
+    </header>
+
+    <div class="grid">
+      <!-- Columna principal -->
+      <section class="card">
+        <h2>Preguntas frecuentes</h2>
+
+        <h3>¿Cómo copiar o compartir un versículo o comentario?</h3>
+        <p>Haz <span class="kbd">toque prolongado</span> sobre el versículo o comentario y elige <b>Copiar</b> o <b>Compartir</b> en el menú.</p>
+
+        <h3>¿Puedo cambiar tema y tamaño de letra?</h3>
+        <p>Sí. Abre <b>Ajustes</b> → selecciona <b>Modo claro/oscuro</b> y ajusta el <b>tamaño de fuente</b>.</p>
+
+        <h3>El buscador no encuentra ciertas palabras</h3>
+        <p>Prueba con una forma más corta o sin tildes. Ej.: “profecia” en lugar de “profecía”.</p>
+
+        <h3>La app no inicia o se cierra</h3>
+        <ul class="list">
+          <li>Reinicia el dispositivo <span class="ok">✓</span></li>
+          <li>Actualiza la app desde la tienda <span class="ok">✓</span></li>
+          <li>Si el problema sigue, contáctanos con los pasos que generaron el error <span class="warn">!</span></li>
+        </ul>
+
+        <div class="hr"></div>
+
+        <h2>Contacto</h2>
+        <p>Escríbenos y te responderemos a la brevedad.</p>
+        <p>
+          📧 <a href="mailto:adventistgo@gmail.com"> adventistgo@gmail.com</a><br/>
+         
+        
+        <p class="small">Horario de atención: Lun–Vie 9:00–17:00 (GMT-3)</p>
+      </section>
+
+      <!-- Columna lateral -->
+      <aside class="card">
+        <h2>Información de la app</h2>
+        <p class="pill">Versión: <b>1.0.0</b></p>
+        <p class="pill">Plataformas: Android / iOS</p>
+        <p class="pill">Estado del servicio: <b class="ok">Operativo</b></p>
+
+        <h3>Enlaces útiles</h3>
+        <ul class="list">
+      <!--    <li><a href="https://play.google.com/store/apps/details?id=TU.ID.ANDROID" target="_blank" rel="noopener">Google Play</a></li> -->
+          <li><a href="https://apps.apple.com/app/biblia-cba/id6751246297" target="_blank" rel="noopener">App Store</a></li>
+          <li><a href="https://docs.google.com/document/d/17cmO_Ey_D4H0RGNp7cQv6sbevk_7ajCFfNTfV8iqq38/edit?usp=drive_link" target="_blank" rel="noopener">Política de Privacidad</a></li>
+        </ul>
+
+        <h3>Registro de cambios</h3>
+        <ul class="list small">
+          <li><b>1.0.0</b> — Publicación inicial, lectura por libro/capítulo/versículo, comentarios expandibles, buscador y modo oscuro.</li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      © <span id="y"></span> AdventistGo · Todos los derechos reservados
+    </footer>
+  </div>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
