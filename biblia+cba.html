@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblia con Comentario Bíblico — Descarga la App</title>
+  <meta name="description" content="Descarga la app Biblia con Comentario Bíblico Adventista para Android e iOS. Lee la Biblia con comentarios detallados en tu móvil." />
+  <style>
+    :root {
+      --bg: #1e1b4b;        /* Fondo oscuro con tono índigo */
+      --card: #2a2a5a;      /* Tarjetas con contraste suave */
+      --text: #f1f5f9;      /* Texto claro */
+      --muted: #94a3b8;     /* Texto secundario */
+      --brand: #60a5fa;     /* Celeste vibrante */
+      --accent: #34d399;    /* Verde esmeralda para acentos */
+      --shadow: rgba(0, 0, 0, 0.3);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, #111827 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 32px 16px;
+      flex-grow: 1;
+    }
+    header {
+      text-align: center;
+      padding: 40px 16px;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), transparent);
+    }
+    .app-logo {
+      max-width: 140px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    }
+    h1 {
+      font-size: clamp(32px, 6vw, 48px);
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 32px var(--shadow);
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--brand);
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin: 24px 0 12px;
+    }
+    p {
+      font-size: 16px;
+      color: var(--muted);
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      background: #000;
+      border-radius: 12px;
+      margin: 16px 0;
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 16px 0;
+      justify-content: center;
+    }
+    .gallery img {
+      max-width: 100%;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px var(--shadow);
+      object-fit: cover;
+    }
+    @media (min-width: 600px) {
+      .gallery img {
+        width: calc(50% - 8px);
+      }
+    }
+    .download-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 24px 0;
+      justify-content: center;
+    }
+    @media (min-width: 600px) {
+      .download-buttons {
+        flex-direction: row;
+        gap: 20px;
+      }
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #4b5563, #1f2937);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(75, 85, 99, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(75, 85, 99, 0.6);
+    }
+    .cta img {
+      width: 24px;
+      height: 24px;
+    }
+    .features {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      color: var(--text);
+    }
+    .feature-item::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .note {
+      font-size: 14px;
+      color: #f59e0b;
+      margin-top: 12px;
+    }
+    footer {
+      text-align: center;
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: auto;
+    }
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- JSON-LD para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Biblia con Comentario Bíblico Adventista",
+    "applicationCategory": "MobileApplication",
+    "operatingSystem": "Android, iOS",
+    "publisher": { "@type": "Organization", "name": "AdventistGo" },
+    "downloadUrl": [
+      "https://apps.apple.com/app/biblia-cba/id6751246297",
+      "https://drive.google.com/uc?export=download&id=15IPkkRfCzB2J08bvlG-DEDC1A0Pg1CY6"
+    ],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://res.cloudinary.com/dv06wcrs2/image/upload/v1757197977/Biblia_CBA_wz9h8d.png" alt="Biblia CBA Logo" class="app-logo">
+      <h1>Biblia con Comentario Bíblico</h1>
+      <p class="subtitle">Explora la Biblia con comentarios adventistas en tu móvil, con un diseño intuitivo y funciones avanzadas.</p>
+      <div class="download-buttons">
+        <a href="https://apps.apple.com/app/biblia-cba/id6751246297" target="_blank" rel="noopener" class="cta">
+          <img src="https://res.cloudinary.com/dv06wcrs2/image/upload/v1757197899/apple-seeklogo_o1knl5.png" alt="Apple Icon"> App Store
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=15IPkkRfCzB2J08bvlG-DEDC1A0Pg1CY6" target="_blank" rel="noopener" class="cta">
+          <img src="https://res.cloudinary.com/dv06wcrs2/image/upload/v1757197780/android-seeklogo_kh6ojd.png" alt="Android Icon"> Android APK
+        </a>
+      </div>
+    </header>
+
+    <main class="card">
+      <h2>Descubre la App</h2>
+      <p>Lee la Biblia con los comentarios detallados del Comentario Bíblico Adventista. Disfruta de una experiencia de lectura fluida, búsqueda rápida, modo oscuro y más.</p>
+
+      <h3>Mira cómo funciona</h3>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/Ucjii1GqTSU" title="Demostración de la app Biblia con Comentario Bíblico" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <h3>Galería</h3>
+      <div class="gallery">
+        <img src="https://res.cloudinary.com/dv06wcrs2/image/upload/v1757198032/ChatGPT_Image_23_abr_2025_10_09_04_cddgyy.png" alt="Captura de pantalla de la app 1">
+        <img src="https://res.cloudinary.com/dv06wcrs2/image/upload/v1757198032/ChatGPT_Image_23_abr_2025_10_18_00_lbi246.png" alt="Captura de pantalla de la app 2">
+      </div>
+
+      <h3>Descarga Gratis</h3>
+      <p>Disponible para Android e iOS. ¡Obtén la app ahora!</p>
+      <div class="download-buttons">
+        <a href="https://apps.apple.com/app/biblia-cba/id6751246297" target="_blank" rel="noopener" class="cta">
+          <img src="https://res.cloudinary.com/dv06wcrs2/image/upload/v1757197899/apple-seeklogo_o1knl5.png" alt="Apple Icon"> App Store
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=15IPkkRfCzB2J08bvlG-DEDC1A0Pg1CY6" target="_blank" rel="noopener" class="cta">
+          <img src="https://res.cloudinary.com/dv06wcrs2/image/upload/v1757197780/android-seeklogo_kh6ojd.png" alt="Android Icon"> Android APK
+        </a>
+      </div>
+      <p class="note">Nota para Android: La app aún no está en Google Play. Descarga el APK con confianza y habilita "Fuentes desconocidas" en tu dispositivo para instalar.</p>
+
+      <h3>Características Principales</h3>
+      <div class="features">
+        <div class="feature-item">Lectura por libro, capítulo y versículo</div>
+        <div class="feature-item">Comentarios expandibles del CBA</div>
+        <div class="feature-item">Buscador inteligente</div>
+        <div class="feature-item">Modo claro/oscuro y ajuste de fuente</div>
+        <div class="feature-item">Copiar y compartir versículos</div>
+      </div>
+    </main>
+
+    <aside class="card">
+      <h2>Información</h2>
+      <p><strong>Versión:</strong> 1.0.0</p>
+      <p><strong>Plataformas:</strong> Android / iOS</p>
+      <p><strong>Estado:</strong> <span style="color: var(--accent);">Disponible</span></p>
+
+      <h3>Enlaces Útiles</h3>
+      <p>
+        <a href="https://adventistgo.github.io/soporte.html" target="_blank" rel="noopener">Soporte</a> |
+        <a href="https://adventistgo.github.io/politica_de_privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>
+      </p>
+
+      <h3>Contacto</h3>
+      <p>¿Dudas? Escríbenos a <a href="mailto:adventistgo@gmail.com">adventistgo@gmail.com</a></p>
+    </aside>
+  </div>
+
+  <footer>
+    © <span id="year"></span> AdventistGo · Todos los derechos reservados
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
