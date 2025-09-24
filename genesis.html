@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Estudio - Libro de Génesis</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #17a2b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a3a, #2c3e50);
+            color: var(--light);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary);
+            color: var(--light);
+        }
+        
+        .subsection {
+            margin-bottom: 15px;
+        }
+        
+        .subsection-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--warning);
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--secondary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        th {
+            background: var(--primary);
+            color: var(--light);
+        }
+        
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .highlight {
+            background: rgba(231, 76, 60, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .reference {
+            color: var(--success);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .key-point {
+            background: rgba(46, 204, 113, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .flashcard {
+            perspective: 1000px;
+            margin: 20px 0;
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .flashcard-front {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .flashcard-back {
+            background: var(--warning);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: var(--success);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: var(--light);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Guía de Estudio - Libro de Génesis</h1>
+            <p class="subtitle">Preparación completa para tu examen - Incluye referencias bíblicas</p>
+            
+            <div class="controls">
+                <button id="toggle-all">Expandir/Contraer Todo</button>
+                <button id="highlight-key">Resaltar Puntos Clave</button>
+                <button id="start-quiz">Iniciar Quiz Rápido</button>
+                <button id="print-guide">Imprimir Guía</button>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress" id="study-progress"></div>
+            </div>
+        </header>
+        
+        <div class="content">
+            <!-- Génesis 1-11 -->
+            <div class="section">
+                <h2 class="section-title">1️⃣ Génesis 1-11: Creación y Primeras Generaciones</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Creación y Caída (Gn 1-3)</h3>
+                    <ul>
+                        <li><span class="highlight">Creación (Gn 1)</span>: 7 días de creación 
+                            <span class="reference">(Gn 1:1-2:3)</span></li>
+                        <li>Día 1: Luz y tinieblas <span class="reference">(Gn 1:3-5)</span></li>
+                        <li>Día 2: Firmamento <span class="reference">(Gn 1:6-8)</span></li>
+                        <li>Día 3: Aguas, tierra y vegetación <span class="reference">(Gn 1:9-13)</span></li>
+                        <li>Día 4: Sol, luna y estrellas <span class="reference">(Gn 1:14-19)</span></li>
+                        <li>Día 5: Aves y peces <span class="reference">(Gn 1:20-23)</span></li>
+                        <li>Día 6: Animales terrestres y el hombre <span class="reference">(Gn 1:24-31)</span></li>
+                        <li>Día 7: Descanso de Dios <span class="reference">(Gn 2:1-3)</span></li>
+                        <li><span class="highlight">Adán y Eva (Gn 2)</span>: Creación del hombre del polvo 
+                            <span class="reference">(Gn 2:7)</span>, mujer de la costilla <span class="reference">(Gn 2:21-22)</span></li>
+                        <li>Huerto de Edén con ríos: Pisón, Guijón, Hidekel/Tigris y Éufrates 
+                            <span class="reference">(Gn 2:10-14)</span></li>
+                        <li><span class="highlight">Caída (Gn 3)</span>: Tentación por la serpiente 
+                            <span class="reference">(Gn 3:1-5)</span>, desobediencia <span class="reference">(Gn 3:6)</span></li>
+                        <li>Expulsión del Edén <span class="reference">(Gn 3:23-24)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Primeros Descendientes de Adán (Gn 4-5)</h3>
+                    <ul>
+                        <li><span class="highlight">Caín y Abel</span>: Caín (agricultor) mata a Abel (pastor) 
+                            <span class="reference">(Gn 4:1-8)</span></li>
+                        <li>Caín desterrado a la tierra de Nod <span class="reference">(Gn 4:16)</span></li>
+                        <li>Nace Set en lugar de Abel <span class="reference">(Gn 4:25)</span></li>
+                    </ul>
+                    
+                    <h4>Descendencia de Caín <span class="reference">(Gn 4:17-24)</span>:</h4>
+                    <ul>
+                        <li>Caín → Enoc → Irad → Mehujael → Metusael → Lamec</li>
+                        <li>Lamec (primer polígamo) tiene hijos: Jabal, Jubal, Tubal-caín</li>
+                    </ul>
+                    
+                    <h4>Descendencia de Set <span class="reference">(Gn 5)</span>:</h4>
+                    <table>
+                        <tr><th>Patriarca</th><th>Edad al engendrar</th><th>Años posteriores</th><th>Edad total</th></tr>
+                        <tr><td>Adán</td><td>130 años (Set)</td><td>800</td><td>930 años</td></tr>
+                        <tr><td>Set</td><td>105 (Enós)</td><td>807</td><td>912</td></tr>
+                        <tr><td>Enós</td><td>90 (Cainán)</td><td>815</td><td>905</td></tr>
+                        <tr><td>Cainán</td><td>70 (Mahalaleel)</td><td>840</td><td>910</td></tr>
+                        <tr><td>Mahalaleel</td><td>65 (Jared)</td><td>830</td><td>895</td></tr>
+                        <tr><td>Jared</td><td>162 (Enoc)</td><td>800</td><td>962</td></tr>
+                        <tr><td>Enoc</td><td>65 (Matusalén)</td><td>300</td><td>365*</td></tr>
+                        <tr><td>Matusalén</td><td>187 (Lamec)</td><td>782</td><td>969</td></tr>
+                        <tr><td>Lamec</td><td>182 (Noé)</td><td>595</td><td>777</td></tr>
+                        <tr><td>Noé</td><td>500 (Sem, Cam, Jafet)</td><td>—</td><td>950</td></tr>
+                    </table>
+                    <p class="reference">*Enoc "caminó con Dios" y fue traspuesto <span class="reference">(Gn 5:24)</span></p>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">El Diluvio (Gn 6-9)</h3>
+                    <ul>
+                        <li>Corrupción de la humanidad: "los hijos de Dios" toman mujeres humanas 
+                            <span class="reference">(Gn 6:1-4)</span></li>
+                        <li>Noé: Varón justo; construye el arca <span class="reference">(Gn 6:9-22)</span></li>
+                        <li>Dimensiones del arca: 300x50x30 codos (aprox. 135×22×13 m) 
+                            <span class="reference">(Gn 6:15)</span></li>
+                        <li>Duración del diluvio: 40 días de lluvia <span class="reference">(Gn 7:12)</span>, 
+                            150 días de aguas <span class="reference">(Gn 7:24)</span></li>
+                        <li>Arca reposa en el monte Ararat <span class="reference">(Gn 8:4)</span></li>
+                        <li>Pacto con Noé: Promesa de no destruir la tierra con diluvio 
+                            <span class="reference">(Gn 9:8-17)</span></li>
+                        <li>Señal: el arco iris <span class="reference">(Gn 9:13)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Tabla de Naciones (Gn 10)</h3>
+                    <ul>
+                        <li><span class="highlight">Sem</span>: Elam, Asur, Arfaxad, Lud, Aram → linaje semita</li>
+                        <li><span class="highlight">Cam</span>: Cus, Mizraim (Egipto), Fut, Canaán</li>
+                        <li><span class="highlight">Jafet</span>: Gomer, Magog, Madai, Javán, Tubal, Mesec, Tiras</li>
+                        <li><span class="highlight">Nimrod</span>: Hijo de Cus, "poderoso cazador", fundador de Babel y Nínive 
+                            <span class="reference">(Gn 10:8-12)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Torre de Babel (Gn 11:1-9)</h3>
+                    <ul>
+                        <li>Un solo idioma en la tierra</li>
+                        <li>Construcción de ciudad y torre para no dispersarse</li>
+                        <li>Dios confunde el lenguaje y los dispersa</li>
+                        <li>La ciudad se llama Babel</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Genealogía de Sem hasta Abram (Gn 11:10-26)</h3>
+                    <table>
+                        <tr><th>Patriarca</th><th>Edad al engendrar</th><th>Años posteriores</th><th>Edad total</th></tr>
+                        <tr><td>Sem</td><td>100 (Arfaxad)</td><td>500</td><td>600</td></tr>
+                        <tr><td>Arfaxad</td><td>35 (Sala)</td><td>403</td><td>438</td></tr>
+                        <tr><td>Sala (Selaj)</td><td>30 (Heber)</td><td>403</td><td>433</td></tr>
+                        <tr><td>Heber</td><td>34 (Peleg)</td><td>430</td><td>464</td></tr>
+                        <tr><td>Peleg</td><td>30 (Reu)</td><td>209</td><td>239</td></tr>
+                        <tr><td>Reu</td><td>32 (Serug)</td><td>207</td><td>239</td></tr>
+                        <tr><td>Serug</td><td>30 (Nacor)</td><td>200</td><td>230</td></tr>
+                        <tr><td>Nacor</td><td>29 (Taré)</td><td>119</td><td>148</td></tr>
+                        <tr><td>Taré</td><td>70 (Abram, Nacor, Harán)</td><td>—</td><td>205</td></tr>
+                    </table>
+                    <p>Abram (más adelante Abraham), hijo de Taré, sale de Ur de los caldeos hacia Harán 
+                        <span class="reference">(Gn 11:31)</span></p>
+                </div>
+            </div>
+            
+            <!-- Génesis 12-25 -->
+            <div class="section">
+                <h2 class="section-title">2️⃣ Génesis 12-25: Abraham y los Patriarcas</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Llamado de Abram (Gn 12)</h3>
+                    <ul>
+                        <li>Abram recibe el llamado de Dios a los 75 años <span class="reference">(Gn 12:4)</span></li>
+                        <li>Promesa de gran nación, bendición y tierra de Canaán 
+                            <span class="reference">(Gn 12:1-3)</span></li>
+                        <li>Sale de Harán con Sarai, Lot y sus bienes</li>
+                        <li>Primer altar en Siquem, segundo entre Betel y Hai</li>
+                        <li>Hambruna en Canaán → desciende a Egipto</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Abram y Lot (Gn 13-14)</h3>
+                    <ul>
+                        <li>Separación de Abram y Lot: Lot elige el valle del Jordán (cerca de Sodoma)</li>
+                        <li>Batalla de los reyes <span class="reference">(Gn 14)</span>:
+                            <ul>
+                                <li>Reyes del oriente: Amrafel (Sinar), Arioc (Elasar), Quedorlaomer (Elam), Tidal (Goim)</li>
+                                <li>Contra reyes de Sodoma, Gomorra, Adma, Zeboim y Bela/Zoar</li>
+                            </ul>
+                        </li>
+                        <li>Lot es capturado; Abram lo rescata con 318 siervos</li>
+                        <li>Encuentro con Melquisedec, rey de Salem y sacerdote del Dios Altísimo 
+                            <span class="reference">(Gn 14:18-20)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Pacto con Abram (Gn 15-17)</h3>
+                    <ul>
+                        <li>Promesa de descendencia: "Y creyó a Jehová, y le fue contado por justicia" 
+                            <span class="reference">(Gn 15:6)</span></li>
+                        <li>Pacto de las piezas: descendencia en servidumbre 400 años en tierra ajena 
+                            <span class="reference">(Gn 15:13-16)</span></li>
+                        <li>Nacimiento de Ismael: Abram tiene 86 años, Agar concibe a Ismael 
+                            <span class="reference">(Gn 16)</span></li>
+                        <li>Cambio de nombres: Abram → Abraham, Sarai → Sara 
+                            <span class="reference">(Gn 17:5,15)</span></li>
+                        <li>Pacto de circuncisión <span class="reference">(Gn 17:10-14)</span></li>
+                        <li>Promesa de Isaac: Abraham 99 años <span class="reference">(Gn 17:19)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Destrucción de Sodoma y Gomorra (Gn 18-19)</h3>
+                    <ul>
+                        <li>Tres varones visitan a Abraham en Mamre <span class="reference">(Gn 18:1-15)</span></li>
+                        <li>Promesa de un hijo a Sara (reirá)</li>
+                        <li>Abraham intercede por Sodoma (baja hasta 10 justos) 
+                            <span class="reference">(Gn 18:16-33)</span></li>
+                        <li>Ángeles visitan a Lot <span class="reference">(Gn 19:1-11)</span></li>
+                        <li>Destrucción con fuego y azufre <span class="reference">(Gn 19:24-25)</span></li>
+                        <li>Esposa de Lot mira atrás → estatua de sal <span class="reference">(Gn 19:26)</span></li>
+                        <li>Hijas de Lot: Moab (moabitas) y Ben-ammi (amonitas) 
+                            <span class="reference">(Gn 19:30-38)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Abraham y Abimelec (Gn 20-21)</h3>
+                    <ul>
+                        <li>Abraham en Gerar presenta a Sara como hermana</li>
+                        <li>Dios protege a Sara; Abimelec la devuelve</li>
+                        <li>Nacimiento de Isaac: Abraham 100 años, Sara 90 
+                            <span class="reference">(Gn 21:1-7)</span></li>
+                        <li>Expulsión de Agar e Ismael al desierto de Beerseba 
+                            <span class="reference">(Gn 21:8-21)</span></li>
+                        <li>Pacto en Beerseba con Abimelec <span class="reference">(Gn 21:22-34)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Sacrificio de Isaac (Gn 22)</h3>
+                    <ul>
+                        <li>Dios prueba a Abraham ordenándole ofrecer a Isaac</li>
+                        <li>En el monte Moriah, Abraham obedece pero Dios provee un carnero 
+                            <span class="reference">(Gn 22:13)</span></li>
+                        <li>Confirmación del pacto y bendición a su descendencia</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Últimos años de Abraham (Gn 23-25)</h3>
+                    <ul>
+                        <li>Muerte de Sara a los 127 años <span class="reference">(Gn 23:1-2)</span></li>
+                        <li>Sepultada en la cueva de Macpela (comprada a Efrón, heteo) 
+                            <span class="reference">(Gn 23:3-20)</span></li>
+                        <li>Rebeca como esposa para Isaac <span class="reference">(Gn 24)</span></li>
+                        <li>Muerte de Abraham a los 175 años <span class="reference">(Gn 25:7-8)</span></li>
+                        <li>Hijos de Abraham con Cetura: Zimrán, Jocsán, Medán, Madián, Isbac, Súa 
+                            <span class="reference">(Gn 25:1-4)</span></li>
+                        <li>Descendientes de Ismael: 12 príncipes <span class="reference">(Gn 25:12-18)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="key-point">
+                    <h4>📊 Datos Clave de Edades (Gn 12-25)</h4>
+                    <table>
+                        <tr><th>Persona</th><th>Edad al hecho</th><th>Edad total</th></tr>
+                        <tr><td>Abram sale de Harán</td><td>75 años</td><td>—</td></tr>
+                        <tr><td>Abram tiene a Ismael</td><td>86 años</td><td>—</td></tr>
+                        <tr><td>Abram circuncidado, promesa de Isaac</td><td>99 años</td><td>—</td></tr>
+                        <tr><td>Nace Isaac</td><td>Abraham 100, Sara 90</td><td>—</td></tr>
+                        <tr><td>Sara muere</td><td>127 años</td><td>—</td></tr>
+                        <tr><td>Abraham muere</td><td>175 años</td><td>—</td></tr>
+                        <tr><td>Ismael muere</td><td>—</td><td>137 años</td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Génesis 26-50 -->
+            <div class="section">
+                <h2 class="section-title">3️⃣ Génesis 26-50: Isaac, Jacob y José</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Isaac y Rebeca (Gn 26-27)</h3>
+                    <ul>
+                        <li>Isaac en Gerar durante hambre; dice que Rebeca es su hermana 
+                            <span class="reference">(Gn 26:6-11)</span></li>
+                        <li>Dios confirma el pacto con Isaac <span class="reference">(Gn 26:2-5)</span></li>
+                        <li>Pozos de Isaac: Eseque, Sitna, Rehobot <span class="reference">(Gn 26:17-22)</span></li>
+                        <li>Juramento con Abimelec en Beerseba <span class="reference">(Gn 26:26-31)</span></li>
+                        <li>Esaú toma esposas heteas: Judith y Basemat 
+                            <span class="reference">(Gn 26:34-35)</span></li>
+                        <li>Jacob engaña a Isaac para recibir la bendición del primogénito 
+                            <span class="reference">(Gn 27)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Jacob en Harán (Gn 28-31)</h3>
+                    <ul>
+                        <li>Jacob huye a Harán por consejo de Rebeca</li>
+                        <li>Sueña con escalera y ángeles en Betel; promete diezmo 
+                            <span class="reference">(Gn 28:10-22)</span></li>
+                        <li>Jacob conoce a Raquel junto al pozo <span class="reference">(Gn 29:1-12)</span></li>
+                        <li>Casamientos: 7 años por Raquel, recibe a Lea primero, luego a Raquel 
+                            <span class="reference">(Gn 29:15-30)</span></li>
+                    </ul>
+                    
+                    <h4>Hijos de Jacob (12 tribus de Israel):</h4>
+                    <table>
+                        <tr><th>Madre</th><th>Hijos</th></tr>
+                        <tr><td><span class="highlight">Lea</span></td><td>Rubén, Simeón, Leví, Judá, Isacar, Zabulón, Dina (hija)</td></tr>
+                        <tr><td><span class="highlight">Raquel</span></td><td>José, Benjamín</td></tr>
+                        <tr><td><span class="highlight">Bilha</span> (sierva de Raquel)</td><td>Dan, Neftalí</td></tr>
+                        <tr><td><span class="highlight">Zilpa</span> (sierva de Lea)</td><td>Gad, Aser</td></tr>
+                    </table>
+                    <p>Jacob enriquece con ganado; huye de Labán; pacto en Mizpa 
+                        <span class="reference">(Gn 31)</span></p>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Jacob regresa a Canaán (Gn 32-35)</h3>
+                    <ul>
+                        <li>Preparación para encuentro con Esaú</li>
+                        <li>Lucha con el ángel en Peniel: nombre cambiado a Israel 
+                            <span class="reference">(Gn 32:22-32)</span></li>
+                        <li>Encuentro pacífico con Esaú <span class="reference">(Gn 33)</span></li>
+                        <li>Dina deshonrada en Siquem; Simeón y Leví matan a los varones 
+                            <span class="reference">(Gn 34)</span></li>
+                        <li>Dios ordena a Jacob ir a Betel <span class="reference">(Gn 35:1)</span></li>
+                        <li>Muerte de Débora, nodriza de Rebeca <span class="reference">(Gn 35:8)</span></li>
+                        <li>Nacimiento de Benjamín y muerte de Raquel en Efrata (Belén) 
+                            <span class="reference">(Gn 35:16-20)</span></li>
+                        <li>Isaac muere a los 180 años; sepultado por Esaú y Jacob 
+                            <span class="reference">(Gn 35:28-29)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Descendientes de Esaú (Gn 36)</h3>
+                    <ul>
+                        <li>Esaú se establece en Seir/Edom</li>
+                        <li>Genealogía de Esaú: Elifaz, Reuel, Jeús, Jalám, Coré</li>
+                        <li>Jefes tribales y reyes de Edom</li>
+                        <li>Origen de los edomitas</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Historia de José (Gn 37-50)</h3>
+                    <ul>
+                        <li>José (17 años) hijo de Raquel, amado por Jacob 
+                            <span class="reference">(Gn 37:2-3)</span></li>
+                        <li>Sueños de José provocan envidia de sus hermanos 
+                            <span class="reference">(Gn 37:5-11)</span></li>
+                        <li>Hermanos lo venden a ismaelitas/medianitas 
+                            <span class="reference">(Gn 37:12-28)</span></li>
+                        <li>Llevado a Egipto, vendido a Potifar <span class="reference">(Gn 39:1)</span></li>
+                        <li>Tentación de la esposa de Potifar; encarcelado 
+                            <span class="reference">(Gn 39:7-20)</span></li>
+                        <li>Interpreta sueños del copero y panadero <span class="reference">(Gn 40)</span></li>
+                        <li>Sueños del Faraón: 7 vacas gordas/flacas, 7 espigas llenas/secas 
+                            <span class="reference">(Gn 41)</span></li>
+                        <li>José interpreta y es nombrado gobernador a los 30 años 
+                            <span class="reference">(Gn 41:37-46)</span></li>
+                        <li>Se casa con Asenat; nacen Manasés y Efraín 
+                            <span class="reference">(Gn 41:50-52)</span></li>
+                        <li>Hambre en Canaán: Hermanos descienden a Egipto a comprar grano 
+                            <span class="reference">(Gn 42)</span></li>
+                        <li>Segunda visita: José se revela a sus hermanos 
+                            <span class="reference">(Gn 45)</span></li>
+                        <li>Jacob desciende a Egipto con su familia (70 personas) 
+                            <span class="reference">(Gn 46)</span></li>
+                        <li>Se establece en Gosén <span class="reference">(Gn 47:1-12)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Bendiciones finales (Gn 48-49)</h3>
+                    <ul>
+                        <li>Jacob bendice a Efraín y Manasés (mano derecha en el menor) 
+                            <span class="reference">(Gn 48)</span></li>
+                        <li>Jacob bendice a sus 12 hijos con profecías sobre cada tribu 
+                            <span class="reference">(Gn 49)</span></li>
+                        <li>Muerte de Jacob a los 147 años; sepultado en Macpela 
+                            <span class="reference">(Gn 49:33; 50:1-14)</span></li>
+                        <li>Muerte de José a los 110 años; embalsamado en Egipto 
+                            <span class="reference">(Gn 50:22-26)</span></li>
+                    </ul>
+                </div>
+                
+                <div class="key-point">
+                    <h4>📊 Datos Clave de Edades (Gn 26-50)</h4>
+                    <table>
+                        <tr><th>Persona</th><th>Edad al hecho</th><th>Edad total</th></tr>
+                        <tr><td>Isaac muere</td><td>—</td><td>180 años</td></tr>
+                        <tr><td>Jacob llega a Egipto</td><td>130 años <span class="reference">(Gn 47:9)</span></td><td>—</td></tr>
+                        <tr><td>Jacob muere</td><td>—</td><td>147 años</td></tr>
+                        <tr><td>José vendido</td><td>17 años</td><td>—</td></tr>
+                        <tr><td>José ante Faraón</td><td>30 años</td><td>—</td></tr>
+                        <tr><td>José muere</td><td>—</td><td>110 años</td></tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Técnicas de Estudio -->
+            <div class="section">
+                <h2 class="section-title">🔑 Técnicas de Estudio y Memorización</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Para Génesis 1-11</h3>
+                    <ul>
+                        <li><span class="highlight">Genealogías de Gn 5 y Gn 11</span>: usar tablas como referencia</li>
+                        <li><span class="highlight">Asociaciones</span>: Caín = agricultor / Abel = pastor / Nimrod = cazador</li>
+                        <li><span class="highlight">Visual</span>: dibujar árboles genealógicos con colores distintos</li>
+                        <li><span class="highlight">Flashcards</span>: nombre al frente, edad y contexto atrás</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Para Génesis 12-25</h3>
+                    <ul>
+                        <li><span class="highlight">Reyes y ciudades</span>: agrupar listas (como en Gn 14)</li>
+                        <li><span class="highlight">Edades</span>: usar tablas por persona</li>
+                        <li><span class="highlight">Eventos clave</span>: asociar cada edad con un evento</li>
+                        <li><span class="highlight">Flashcards</span>: nombre → edad/evento</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title">Para Génesis 26-50</h3>
+                    <ul>
+                        <li><span class="highlight">Doce hijos de Jacob</span>: aprender en bloques por madre</li>
+                        <li><span class="highlight">Eventos por edad</span>: José 17 vendido, 30 ante Faraón, 110 muere</li>
+                        <li><span class="highlight">Mapa mental</span>: Isaac–Jacob–José → Egipto</li>
+                        <li><span class="highlight">Asociar nombres</span>: Edom = Esaú, Peniel = lucha con ángel</li>
+                    </ul>
+                </div>
+                
+                <div class="flashcard" id="flashcard-1">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>¿Cuántos días duró la creación?</h3>
+                            <p>(Haz clic para ver la respuesta)</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>7 días</h3>
+                            <p>Día 7: Dios descansó <span class="reference">(Gn 2:2-3)</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" id="flashcard-2">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>¿A qué edad Abraham salió de Harán?</h3>
+                            <p>(Haz clic para ver la respuesta)</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>75 años</h3>
+                            <p><span class="reference">(Gn 12:4)</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 Guía de Estudio - Libro de Génesis | Preparado para tu examen</p>
+        </footer>
+    </div>
+
+    <script>
+        // Funcionalidad para expandir/contraer secciones
+        document.querySelectorAll('.section-title').forEach(title => {
+            title.addEventListener('click', function() {
+                const section = this.parentElement;
+                const content = Array.from(section.children).filter(child => 
+                    child !== this && !child.classList.contains('section-title'));
+                
+                content.forEach(el => {
+                    if (el.style.display === 'none') {
+                        el.style.display = 'block';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Funcionalidad para las flashcards
+        document.querySelectorAll('.flashcard').forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('flipped');
+            });
+        });
+        
+        // Botón para expandir/contraer todo
+        document.getElementById('toggle-all').addEventListener('click', function() {
+            const sections = document.querySelectorAll('.section');
+            const isExpanded = sections[0].querySelector('.subsection').style.display !== 'none';
+            
+            sections.forEach(section => {
+                const content = Array.from(section.children).filter(child => 
+                    !child.classList.contains('section-title'));
+                
+                content.forEach(el => {
+                    el.style.display = isExpanded ? 'none' : 'block';
+                });
+            });
+            
+            this.textContent = isExpanded ? 'Expandir Todo' : 'Contraer Todo';
+        });
+        
+        // Resaltar puntos clave
+        document.getElementById('highlight-key').addEventListener('click', function() {
+            document.querySelectorAll('.highlight').forEach(el => {
+                el.style.animation = 'pulse 1s';
+                setTimeout(() => {
+                    el.style.animation = '';
+                }, 1000);
+            });
+        });
+        
+        // Iniciar quiz rápido
+        document.getElementById('start-quiz').addEventListener('click', function() {
+            const questions = [
+                "¿En qué día creó Dios la luz?",
+                "¿Quién fue el primer homicida?",
+                "¿Cuántos años vivió Matusalén?",
+                "¿Qué señal dio Dios a Noé después del diluvio?",
+                "¿A qué edad Abraham tuvo a Isaac?",
+                "¿Quién luchó con un ángel en Peniel?",
+                "¿Cuántos hijos tuvo Jacob?",
+                "¿A qué edad José fue vendido por sus hermanos?"
+            ];
+            
+            const answers = [
+                "Día 1 (Gn 1:3-5)",
+                "Caín (Gn 4:8)",
+                "969 años (Gn 5:27)",
+                "El arco iris (Gn 9:13)",
+                "100 años (Gn 21:5)",
+                "Jacob (Gn 32:24-30)",
+                "12 hijos (Gn 35:22-26)",
+                "17 años (Gn 37:2)"
+            ];
+            
+            let score = 0;
+            questions.forEach((question, index) => {
+                const userAnswer = prompt(question);
+                if (userAnswer && userAnswer.toLowerCase().includes(answers[index].toLowerCase().substring(0, 10))) {
+                    alert("¡Correcto! " + answers[index]);
+                    score++;
+                } else {
+                    alert("Incorrecto. La respuesta es: " + answers[index]);
+                }
+            });
+            
+            alert(`Quiz completado. Puntuación: ${score}/${questions.length}`);
+        });
+        
+        // Actualizar barra de progreso al hacer scroll
+        window.addEventListener('scroll', function() {
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset;
+            const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+            document.getElementById('study-progress').style.width = scrollPercent + '%';
+        });
+        
+        // Imprimir guía
+        document.getElementById('print-guide').addEventListener('click', function() {
+            window.print();
+        });
+        
+        // Añadir estilo de animación para el resaltado
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
