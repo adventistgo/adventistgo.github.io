@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versículos Importantes do Livro de Salmos - NVI</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            z-index: 100;
+        }
+        
+        .search-box {
+            flex-grow: 1;
+            max-width: 400px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: var(--dark-color);
+        }
+        
+        .psalms-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .psalm-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s;
+        }
+        
+        .psalm-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .psalm-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        .verse {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid var(--secondary-color);
+        }
+        
+        .verse-number {
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .verse-text {
+            margin-top: 5px;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .bookmark-btn {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            cursor: pointer;
+            float: right;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+        
+        .jump-to {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .jump-to select {
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #ddd;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .psalms-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+            }
+            
+            .search-box {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Versículos Importantes do Livro de Salmos</h1>
+            <p class="subtitle">Seleção completa de versículos-chave para estudo - Nova Versão Internacional (NVI)</p>
+        </header>
+        
+        <div class="jump-to">
+            <select id="psalmSelector">
+                <option value="">Ir para um Salmo específico...</option>
+                <!-- Opções serão preenchidas por JavaScript -->
+            </select>
+        </div>
+        
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar versículo ou palavra-chave...">
+            </div>
+            <div class="filter-buttons">
+                <button id="showAllBtn">Mostrar Todos</button>
+                <button id="bookmarkBtn">Meus Favoritos</button>
+            </div>
+        </div>
+        
+        <div class="psalms-container" id="psalmsContainer">
+            <!-- Os salmos serão inseridos aqui pelo JavaScript -->
+        </div>
+        
+        <footer>
+            <p>Estudo dos Salmos - Versão NVI Português - Seleção Completa</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dados COMPLETOS dos Salmos com todos os versículos selecionados
+        const psalmsData = [
+            {
+                id: 1,
+                title: "Salmo 1 - O caminho do justo e do ímpio",
+                verses: [
+                    { number: 1, text: "Como é feliz aquele que não segue o conselho dos ímpios, não imita a conduta dos pecadores, nem se assenta na roda dos zombadores!" },
+                    { number: 2, text: "Ao contrário, sua satisfação está na lei do Senhor, e nessa lei medita dia e noite." },
+                    { number: 3, text: "É como <span class='highlight'>árvore plantada à beira de águas correntes</span>: Dá fruto no tempo certo e suas folhas não murcham. Tudo o que ele faz prospera!" },
+                    { number: 6, text: "Pois o Senhor aprova o caminho dos justos, mas o caminho dos ímpios leva à destruição!" }
+                ]
+            },
+            {
+                id: 2,
+                title: "Salmo 2 - O reino do Messias",
+                verses: [
+                    { number: 7, text: "Proclamarei o decreto do Senhor: Ele me disse: 'Tu és meu filho; eu hoje te gerei." },
+                    { number: 8, text: "Pede-me, e te darei as nações como herança e os confins da terra como tua propriedade." },
+                    { number: 11, text: "Sirvam ao Senhor com temor; com tremor exultem." }
+                ]
+            },
+            {
+                id: 3,
+                title: "Salmo 3 - Oração matinal de confiança",
+                verses: [
+                    { number: 3, text: "Mas tu, Senhor, és o escudo que me protege; és a minha glória e aquele que me faz erguer a cabeça." },
+                    { number: 5, text: "Eu me deito e durmo, e torno a acordar, porque é o Senhor que me sustém." }
+                ]
+            },
+            {
+                id: 4,
+                title: "Salmo 4 - Oração noturna de confiança",
+                verses: [
+                    { number: 3, text: "Saibam que o Senhor escolheu o piedoso para si; o Senhor ouve quando eu o invoco." },
+                    { number: 8, text: "Em paz me deito e logo adormeço, pois só tu, Senhor, me fazes viver em segurança." }
+                ]
+            },
+            {
+                id: 5,
+                title: "Salmo 5 - Petição por orientação e proteção",
+                verses: [
+                    { number: 3, text: "Pela manhã, ouve, Senhor, o meu clamor; pela manhã apresento a ti a minha oração e aguardo com esperança." }
+                ]
+            },
+            {
+                id: 6,
+                title: "Salmo 6 - Súplica no sofrimento",
+                verses: [
+                    { number: 2, text: "Senhor, não me castiges na tua ira nem me disciplines no teu furor." },
+                    { number: 9, text: "O Senhor ouviu a minha súplica; o Senhor aceitou a minha oração." }
+                ]
+            },
+            {
+                id: 8,
+                title: "Salmo 8 - A glória de Deus e a dignidade do homem",
+                verses: [
+                    { number: 1, text: "Senhor, Senhor nosso, como é majestoso o teu nome em toda a terra!" },
+                    { number: 4, text: "Que é o homem, para que com ele te importes? E o filho do homem, para que com ele te preocupes?" },
+                    { number: 5, text: "Tu o fizeste um pouco menor do que os seres celestiais e o coroaste de glória e de honra." }
+                ]
+            },
+            {
+                id: 9,
+                title: "Salmo 9 - Louvor pela justiça divina",
+                verses: [
+                    { number: 9, text: "O Senhor é refúgio para os oprimidos, uma torre segura na hora da adversidade." },
+                    { number: 10, text: "Os que conhecem o teu nome confiam em ti, pois tu, Senhor, jamais abandonas os que te buscam." }
+                ]
+            },
+            {
+                id: 10,
+                title: "Salmo 10 - Apelo contra os ímpios",
+                verses: [
+                    { number: 17, text: "Tu, Senhor, ouves a súplica dos necessitados; tu os reanimas e atendes ao seu clamor." }
+                ]
+            },
+            {
+                id: 11,
+                title: "Salmo 11 - O Senhor é um refúgio seguro",
+                verses: [
+                    { number: 4, text: "O Senhor está no seu santo templo; no trono nos céus está assentado." }
+                ]
+            },
+            {
+                id: 13,
+                title: "Salmo 13 - Até quando, Senhor?",
+                verses: [
+                    { number: 5, text: "Eu, porém, confio no teu amor; o meu coração exulta em tua salvação." }
+                ]
+            },
+            {
+                id: 14,
+                title: "Salmo 14 - O tolo que nega a Deus",
+                verses: [
+                    { number: 1, text: "Diz o tolo em seu coração: 'Deus não existe'." }
+                ]
+            },
+            {
+                id: 15,
+                title: "Salmo 15 - Quem pode habitar no santuário?",
+                verses: [
+                    { number: 1, text: "Senhor, quem habitará no teu santuário? Quem poderá morar no teu santo monte?" }
+                ]
+            },
+            {
+                id: 16,
+                title: "Salmo 16 - A herança segura",
+                verses: [
+                    { number: 8, text: "Sempre tenho o Senhor diante de mim. Com ele à minha direita, não serei abalado." },
+                    { number: 11, text: "Tu me farás conhecer o caminho da vida e me darás plena alegria na tua presença, com delícias eternas à tua direita." }
+                ]
+            },
+            {
+                id: 18,
+                title: "Salmo 18 - Cântico de libertação",
+                verses: [
+                    { number: 2, text: "O Senhor é a minha rocha, a minha fortaleza e o meu libertador; o meu Deus é o meu rochedo, em quem me refugio." },
+                    { number: 6, text: "Na minha angústia clamei ao Senhor; gritei por ajuda ao meu Deus. Do seu templo ele ouviu a minha voz; o meu clamor chegou à sua presença, aos seus ouvidos." },
+                    { number: 28, text: "Tu, Senhor, manténs acesa a minha lâmpada; o meu Deus transforma em luz as minhas trevas." },
+                    { number: 46, text: "O Senhor vive! Bendita seja a minha Rocha! Exaltado seja Deus, o meu Salvador!" }
+                ]
+            },
+            {
+                id: 19,
+                title: "Salmo 19 - A revelação de Deus na criação e na lei",
+                verses: [
+                    { number: 1, text: "Os céus declaram a glória de Deus; o firmamento proclama a obra das suas mãos." },
+                    { number: 7, text: "A lei do Senhor é perfeita, e revigora a alma. Os testemunhos do Senhor são dignos de confiança, e tornam sábios os inexperientes." },
+                    { number: 14, text: "Sejam agradáveis as palavras da minha boca e a meditação do meu coração perante a tua face, Senhor, Rocha minha e Redentor meu!" }
+                ]
+            },
+            {
+                id: 22,
+                title: "Salmo 22 - O Salmo do sofrimento do Messias",
+                verses: [
+                    { number: 1, text: "Deus meu, Deus meu, por que me abandonaste?" },
+                    { number: 16, text: "Cães me rodearam! Um bando de homens maus me cercou! Perfuraram minhas mãos e meus pés." },
+                    { number: 18, text: "Repartem as minhas roupas entre si e lançam sortes sobre a minha veste." },
+                    { number: 27, text: "Todos os confins da terra se lembrarão e se voltarão para o Senhor, e todas as famílias das nações se prostrarão diante dele." }
+                ]
+            },
+            {
+                id: 23,
+                title: "Salmo 23 - O Senhor é o meu pastor",
+                verses: [
+                    { number: 1, text: "O Senhor é o meu pastor; de nada terei falta." },
+                    { number: 2, text: "Em verdes pastagens me faz repousar e me conduz a águas tranquilas;" },
+                    { number: 3, text: "restaura-me o vigor. Guia-me nas veredas da justiça por amor do seu nome." },
+                    { number: 4, text: "Mesmo quando eu andar por um vale de trevas e morte, não temerei perigo algum, pois tu estás comigo; a tua vara e o teu cajado me protegem." },
+                    { number: 5, text: "Preparas um banquete para mim à vista dos meus inimigos. Tu me honras, ungindo a minha cabeça com óleo e fazendo transbordar o meu cálice." },
+                    { number: 6, text: "Sei que a bondade e a fidelidade me acompanharão todos os dias da minha vida, e voltarei à casa do Senhor enquanto eu viver." }
+                ]
+            },
+            {
+                id: 24,
+                title: "Salmo 24 - O Rei da Glória",
+                verses: [
+                    { number: 1, text: "Do Senhor é a terra e tudo o que nela existe, o mundo e os que nele vivem;" },
+                    { number: 3, text: "Quem poderá subir o monte do Senhor? Quem poderá entrar no seu santo lugar?" },
+                    { number: 4, text: "Aquele que tem as mãos limpas e o coração puro, que não recorre aos ídolos nem jura por deuses falsos." },
+                    { number: 10, text: "Quem é esse Rei da glória? O Senhor dos Exércitos; ele é o Rei da glória!" }
+                ]
+            },
+            {
+                id: 25,
+                title: "Salmo 25 - Oração por orientação e perdão",
+                verses: [
+                    { number: 4, text: "Mostra-me, Senhor, os teus caminhos, ensina-me as tuas veredas;" },
+                    { number: 5, text: "guia-me com a tua verdade e ensina-me, pois tu és Deus, meu Salvador, e a minha esperança está em ti o tempo todo." }
+                ]
+            },
+            {
+                id: 26,
+                title: "Salmo 26 - Declaração de integridade",
+                verses: [
+                    { number: 2, text: "Sonda-me, Senhor, e prova-me, examina o meu coração e a minha mente;" }
+                ]
+            },
+            {
+                id: 27,
+                title: "Salmo 27 - Confiança e segurança no Senhor",
+                verses: [
+                    { number: 1, text: "O Senhor é a minha luz e a minha salvação; de quem terei temor? O Senhor é o meu forte refúgio; de quem terei medo?" },
+                    { number: 4, text: "Uma coisa peço ao Senhor e a procuro: que eu possa viver na casa do Senhor todos os dias da minha vida, para contemplar a bondade do Senhor e buscar sua orientação no seu templo." },
+                    { number: 14, text: "Espere no Senhor. Seja forte! Coragem! Espere no Senhor." }
+                ]
+            },
+            {
+                id: 28,
+                title: "Salmo 28 - Oração e ação de graças",
+                verses: [
+                    { number: 7, text: "O Senhor é a minha força e o meu escudo; nele o meu coração confia, e dele recebo ajuda. Meu coração exulta de alegria, e com o meu cântico lhe darei graças." }
+                ]
+            },
+            {
+                id: 29,
+                title: "Salmo 29 - O poder da voz de Deus",
+                verses: [
+                    { number: 2, text: "Atribuam ao Senhor a glória que o seu nome merece; adorem o Senhor no esplendor do seu santuário." },
+                    { number: 11, text: "O Senhor dá força ao seu povo; o Senhor dá a seu povo a bênção da paz." }
+                ]
+            },
+            {
+                id: 30,
+                title: "Salmo 30 - Louvor pela libertação",
+                verses: [
+                    { number: 5, text: "Pois a sua ira só dura um instante, mas o seu favor dura a vida toda; o choro pode persistir uma noite, mas de manhã irrompe a alegria." }
+                ]
+            },
+            {
+                id: 31,
+                title: "Salmo 31 - Refúgio na confiança",
+                verses: [
+                    { number: 5, text: "Em tuas mãos entrego o meu espírito; resgata-me, Senhor, Deus da verdade." },
+                    { number: 14, text: "Eu, porém, confio em ti, Senhor, e digo: 'Tu és o meu Deus'." }
+                ]
+            },
+            {
+                id: 32,
+                title: "Salmo 32 - A bem-aventurança do perdão",
+                verses: [
+                    { number: 1, text: "Como é feliz aquele que tem suas transgressões perdoadas e seus pecados apagados!" },
+                    { number: 5, text: "Então reconheci diante de ti o meu pecado e não encobri as minhas culpas. Eu disse: 'Confessarei as minhas transgressões ao Senhor', e tu perdoaste a culpa do meu pecado." },
+                    { number: 8, text: "Instruirei e te ensinarei o caminho que deves seguir; conselhos te darei e de olhos em ti ficarei." }
+                ]
+            },
+            {
+                id: 33,
+                title: "Salmo 33 - Cântico de louvor à soberania de Deus",
+                verses: [
+                    { number: 4, text: "Pois a palavra do Senhor é verdadeira; ele é fiel em tudo o que faz." },
+                    { number: 12, text: "Como é feliz a nação cujo Deus é o Senhor, o povo que ele escolheu para sua herança!" }
+                ]
+            },
+            {
+                id: 34,
+                title: "Salmo 34 - Louvor pela libertação",
+                verses: [
+                    { number: 4, text: "Busquei o Senhor, e ele me respondeu; livrou-me de todos os meus temores." },
+                    { number: 8, text: "Provem e vejam como o Senhor é bom. Como é feliz o homem que nele se refugia!" },
+                    { number: 18, text: "O Senhor está perto dos que têm o coração quebrantado e salva os de espírito abatido." }
+                ]
+            },
+            {
+                id: 36,
+                title: "Salmo 36 - O amor leal de Deus",
+                verses: [
+                    { number: 5, text: "O teu amor, Senhor, chega até os céus; a tua fidelidade até as nuvens." },
+                    { number: 9, text: "Pois em ti está a fonte da vida; graças à tua luz, vemos a luz." }
+                ]
+            },
+            {
+                id: 37,
+                title: "Salmo 37 - Confiar no Senhor e fazer o bem",
+                verses: [
+                    { number: 4, text: "Deleite-se no Senhor, e ele atenderá aos desejos do seu coração." },
+                    { number: 5, text: "Entregue o seu caminho ao Senhor; confie nele, e ele agirá." },
+                    { number: 7, text: "Descanse no Senhor e aguarde por ele com paciência; não se aborreça com o sucesso dos outros, nem com aqueles que maquinam o mal." },
+                    { number: 23, text: "O Senhor firma os passos de um homem, quando a conduta deste o agrada;" }
+                ]
+            },
+            {
+                id: 38,
+                title: "Salmo 38 - Oração no sofrimento",
+                verses: [
+                    { number: 21, text: "Senhor, não me abandones! Não fiques longe de me, meu Deus!" }
+                ]
+            },
+            {
+                id: 39,
+                title: "Salmo 39 - A brevidade da vida",
+                verses: [
+                    { number: 4, text: "Mostra-me, Senhor, o fim da minha vida e o número dos meus dias, para que eu saiba quão frágil sou." }
+                ]
+            },
+            {
+                id: 40,
+                title: "Salmo 40 - A obediência que agrada a Deus",
+                verses: [
+                    { number: 1, text: "Esperei confiantemente pelo Senhor; ele se inclinou para mim e ouviu o meu grito de socorro." },
+                    { number: 8, text: "Agradar-te não me dá prazer, ó meu Deus; a tua lei está no fundo do meu coração." }
+                ]
+            },
+            {
+                id: 41,
+                title: "Salmo 41 - Cura para o doente",
+                verses: [
+                    { number: 3, text: "O Senhor o sustentará em seu leito de enfermidade e da doença o restaurará." }
+                ]
+            },
+            {
+                id: 42,
+                title: "Salmo 42 - Sede de Deus",
+                verses: [
+                    { number: 1, text: "Como a corça anseia por águas correntes, a minha alma anseia por ti, ó Deus." },
+                    { number: 5, text: "Por que você está assim tão triste, ó minha alma? Por que está assim tão perturbada dentro de mim? Ponha a sua esperança em Deus! Pois ainda o louvarei, a ele, meu Salvador e meu Deus." }
+                ]
+            },
+            {
+                id: 43,
+                title: "Salmo 43 - Sede de Deus (continuação)",
+                verses: [
+                    { number: 3, text: "Manda a tua luz e a tua verdade, para que me guiem e me levem ao teu santo monte, ao lugar onde habitas." }
+                ]
+            },
+            {
+                id: 46,
+                title: "Salmo 46 - Deus é o nosso refúgio",
+                verses: [
+                    { number: 1, text: "Deus é o nosso refúgio e a nossa fortaleza, auxílio sempre presente na adversidade." },
+                    { number: 10, text: "Parem de lutar! Saibam que eu sou Deus! Serei exaltado entre as nações, serei exaltado na terra." }
+                ]
+            },
+            {
+                id: 51,
+                title: "Salmo 51 - Oração de arrependimento",
+                verses: [
+                    { number: 1, text: "Tem misericórdia de mim, ó Deus, por teu amor; por tua grande compaixão apaga as minhas transgressões." },
+                    { number: 2, text: "Lava-me de toda a minha culpa e purifica-me do meu pecado." },
+                    { number: 10, text: "Cria em mim um coração puro, ó Deus, e renova em mim um espírito estável." },
+                    { number: 17, text: "Os sacrifícios que agradam a Deus são um espírito quebrantado; um coração quebrantado e contrito, ó Deus, não desprezarás." }
+                ]
+            },
+            {
+                id: 84,
+                title: "Salmo 84 - Alegria na casa de Deus",
+                verses: [
+                    { number: 1, text: "Como é agradável o teu santuário, ó Senhor dos Exércitos!" },
+                    { number: 10, text: "É melhor um dia nos teus átrios do que mil noutro lugar; prefiro ficar à porta da casa do meu Deus a habitar nas tendas dos ímpios." },
+                    { number: 11, text: "O Senhor Deus é sol e escudo; o Senhor concede favor e honra; não recusa nenhum bem aos que vivem com integridade." }
+                ]
+            },
+            {
+                id: 91,
+                title: "Salmo 91 - Segurança sob a proteção de Deus",
+                verses: [
+                    { number: 1, text: "Aquele que habita no abrigo do Altíssimo e descansa à sombra do Todo-poderoso" },
+                    { number: 2, text: "pode dizer ao Senhor: 'Tu és o meu refúgio e a minha fortaleza, o meu Deus, em quem confio'." },
+                    { number: 4, text: "Ele o cobrirá com as suas penas, e sob as suas asas você encontrará refúgio; a fidelidade dele será o seu escudo protetor." },
+                    { number: 11, text: "Porque a seus anjos ele dará ordens a seu seu respeito, para que o protejam em todos os seus caminhos;" }
+                ]
+            },
+            {
+                id: 100,
+                title: "Salmo 100 - Ação de graças",
+                verses: [
+                    { number: 1, text: "Aclamem ao Senhor, todos os habitantes da terra!" },
+                    { number: 2, text: "Prestem culto ao Senhor com alegria; entrem na sua presença com cânticos alegres." },
+                    { number: 3, text: "Saibam que o Senhor é Deus. Foi ele que nos fez, e somos dele; somos o seu povo, e rebanho do seu pastoreio." },
+                    { number: 4, text: "Entrem por suas portas com ações de graças, e em seus átrios com louvor; deem-lhe graças e bendigam o seu nome." },
+                    { number: 5, text: "Pois o Senhor é bom e o seu amor leal é eterno; a sua fidelidade permanece por todas as gerações." }
+                ]
+            },
+            {
+                id: 103,
+                title: "Salmo 103 - Louvores pelos benefícios de Deus",
+                verses: [
+                    { number: 1, text: "Bendiga ao Senhor a minha alma! Bendiga todo o meu ser o seu santo nome!" },
+                    { number: 2, text: "Bendiga ao Senhor a minha alma e não esqueça de nenhuma de suas bênçãos!" },
+                    { number: 3, text: "É ele que perdoa todos os seus pecados e cura todas as suas doenças," },
+                    { number: 4, text: "que resgata a sua vida da sepultura e o coroa de amor e de compaixão," },
+                    { number: 8, text: "O Senhor é compassivo e misericordioso, mui paciente e cheio de amor." },
+                    { number: 12, text: "assim como o Oriente está longe do Ocidente, assim ele afasta para longe de nós as nossas transgressões." }
+                ]
+            },
+            {
+                id: 119,
+                title: "Salmo 119 - A excelência da Palavra de Deus",
+                verses: [
+                    { number: 1, text: "Como são felizes os que andam em caminhos irrepreensíveis, que andam na lei do Senhor!" },
+                    { number: 9, text: "Como pode o jovem manter pura a sua conduta? Vivendo de acordo com a tua palavra." },
+                    { number: 11, text: "Guardei no coração a tua palavra para não pecar contra ti." },
+                    { number: 18, text: "Abre os meus olhos para que eu veja as maravilhas da tua lei." },
+                    { number: 105, text: "A tua palavra é lâmpada que ilumina os meus passos e luz que clareia o meu caminho." },
+                    { number: 130, text: "A revelação das tuas palavras ilumina e dá entendimento aos inexperientes." }
+                ]
+            },
+            {
+                id: 121,
+                title: "Salmo 121 - Ajuda do alto",
+                verses: [
+                    { number: 1, text: "Levanto os meus olhos para os montes e pergunto: De onde me vem o socorro?" },
+                    { number: 2, text: "O meu socorro vem do Senhor, que fez os céus e a terra." }
+                ]
+            },
+            {
+                id: 139,
+                title: "Salmo 139 - A onisciência e onipresença de Deus",
+                verses: [
+                    { number: 1, text: "Senhor, tu me sondas e me conheces." },
+                    { number: 7, text: "Para onde poderia eu escapar do teu Espírito? Para onde poderia fugir da tua presença?" },
+                    { number: 13, text: "Tu criaste o íntimo do meu ser e me teceste no ventre de minha mãe." },
+                    { number: 14, text: "Eu te louvo porque me fizeste de modo especial e admirável. Tuas obras são maravilhosas! Disso tenho plena certeza." },
+                    { number: 23, text: "Sonda-me, ó Deus, e conhece o meu coração; prova-me, e conhece as minhas inquietações." },
+                    { number: 24, text: "Vê se em minha conduta algo que te ofende, e dirige-me pelo caminho eterno." }
+                ]
+            },
+            {
+                id: 150,
+                title: "Salmo 150 - Convocação final de louvor",
+                verses: [
+                    { number: 1, text: "Aleluia! Louvem a Deus no seu santuário, louvem-no no seu magnífico firmamento." },
+                    { number: 2, text: "Louvem-no pelos seus feitos poderosos, louvem-no segundo a imensidão da sua grandeza!" },
+                    { number: 3, text: "Louvem-no ao som de trombeta, louvem-no com a lira e a harpa!" },
+                    { number: 4, text: "Louvem-no com tamborins e danças, louvem-no com instrumentos de cordas e com flautas!" },
+                    { number: 5, text: "Louvem-no com címbalos sonoros, louvem-no com címbalos resonantes!" },
+                    { number: 6, text: "Tudo o que tem vida louve o Senhor! Aleluia!" }
+                ]
+            }
+        ];
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPsalms();
+            setupEventListeners();
+            populatePsalmSelector();
+        });
+
+        // Renderizar todos os salmos
+        function renderPsalms(psalmsToRender = psalmsData) {
+            const container = document.getElementById('psalmsContainer');
+            container.innerHTML = '';
+
+            psalmsToRender.forEach(psalm => {
+                const psalmCard = document.createElement('div');
+                psalmCard.className = 'psalm-card';
+                psalmCard.id = `psalm-${psalm.id}`;
+
+                let versesHTML = '';
+                psalm.verses.forEach(verse => {
+                    versesHTML += `
+                        <div class="verse">
+                            <div class="verse-number">${verse.number}</div>
+                            <div class="verse-text">${verse.text}</div>
+                        </div>
+                    `;
+                });
+
+                psalmCard.innerHTML = `
+                    <h3 class="psalm-title">${psalm.title}</h3>
+                    <button class="bookmark-btn" data-psalm-id="${psalm.id}">★</button>
+                    ${versesHTML}
+                `;
+
+                container.appendChild(psalmCard);
+            });
+        }
+
+        // Configurar event listeners
+        function setupEventListeners() {
+            // Busca
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                
+                if (searchTerm.trim() === '') {
+                    renderPsalms();
+                    return;
+                }
+
+                const filteredPsalms = psalmsData.filter(psalm => {
+                    // Buscar no título
+                    if (psalm.title.toLowerCase().includes(searchTerm)) {
+                        return true;
+                    }
+                    
+                    // Buscar nos versículos
+                    return psalm.verses.some(verse => 
+                        verse.text.toLowerCase().includes(searchTerm)
+                    );
+                });
+
+                renderPsalms(filteredPsalms);
+            });
+
+            // Selecionar salmo específico
+            document.getElementById('psalmSelector').addEventListener('change', function(e) {
+                const selectedPsalmId = parseInt(e.target.value);
+                if (selectedPsalmId) {
+                    const psalmElement = document.getElementById(`psalm-${selectedPsalmId}`);
+                    if (psalmElement) {
+                        psalmElement.scrollIntoView({ behavior: 'smooth' });
+                        // Destacar o salmo selecionado
+                        document.querySelectorAll('.psalm-card').forEach(card => {
+                            card.style.boxShadow = 'var(--box-shadow)';
+                        });
+                        psalmElement.style.boxShadow = '0 0 0 3px var(--accent-color)';
+                    }
+                }
+            });
+
+            // Botão mostrar todos
+            document.getElementById('showAllBtn').addEventListener('click', function() {
+                document.getElementById('searchInput').value = '';
+                renderPsalms();
+            });
+
+            // Botão favoritos
+            document.getElementById('bookmarkBtn').addEventListener('click', function() {
+                const bookmarkedPsalmIds = JSON.parse(localStorage.getItem('bookmarkedPsalms') || '[]');
+                const bookmarkedPsalms = psalmsData.filter(psalm => 
+                    bookmarkedPsalmIds.includes(psalm.id)
+                );
+                
+                if (bookmarkedPsalms.length === 0) {
+                    alert('Você ainda não tem salmos favoritos. Clique na estrela em um salmo para adicioná-lo aos favoritos.');
+                    return;
+                }
+                
+                renderPsalms(bookmarkedPsalms);
+            });
+
+            // Delegar evento para os botões de favorito
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('bookmark-btn')) {
+                    const psalmId = parseInt(e.target.getAttribute('data-psalm-id'));
+                    toggleBookmark(psalmId, e.target);
+                }
+            });
+        }
+
+        // Popular o seletor de salmos
+        function populatePsalmSelector() {
+            const selector = document.getElementById('psalmSelector');
+            
+            psalmsData.forEach(psalm => {
+                const option = document.createElement('option');
+                option.value = psalm.id;
+                option.textContent = `Salmo ${psalm.id}`;
+                selector.appendChild(option);
+            });
+        }
+
+        // Alternar favorito
+        function toggleBookmark(psalmId, button) {
+            let bookmarkedPsalms = JSON.parse(localStorage.getItem('bookmarkedPsalms') || '[]');
+            
+            if (bookmarkedPsalms.includes(psalmId)) {
+                // Remover dos favoritos
+                bookmarkedPsalms = bookmarkedPsalms.filter(id => id !== psalmId);
+                button.style.color = 'var(--secondary-color)';
+            } else {
+                // Adicionar aos favoritos
+                bookmarkedPsalms.push(psalmId);
+                button.style.color = 'var(--accent-color)';
+            }
+            
+            localStorage.setItem('bookmarkedPsalms', JSON.stringify(bookmarkedPsalms));
+        }
+    </script>
+</body>
+</html>
