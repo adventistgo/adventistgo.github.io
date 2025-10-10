@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo: Conselhos sobre Mordomia - Capítulos 34-54</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+            background-color: white;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .search-box {
+            flex-grow: 1;
+            max-width: 400px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.7rem;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background-color: var(--light-color);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .chapter-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .chapter-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .chapter-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+        }
+        
+        .chapter-number {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .chapter-title {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        
+        .chapter-content {
+            padding: 1.5rem;
+        }
+        
+        .theme {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .key-points {
+            margin: 1rem 0;
+        }
+        
+        .key-points ul {
+            padding-left: 1.5rem;
+        }
+        
+        .key-points li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .quote {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+        
+        .highlight {
+            background-color: #fff9c4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+        
+        .study-tools {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 2rem;
+        }
+        
+        .tools-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .tool-card {
+            background-color: var(--light-color);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        
+        .tool-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .chapters-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box {
+                max-width: 100%;
+            }
+        }
+        
+        .chapter-card.highlighted {
+            border: 2px solid var(--accent-color);
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Conselhos sobre Mordomia</h1>
+        <p class="subtitle">Resumo dos Capítulos 34-54 - Ellen G. White</p>
+    </header>
+    
+    <div class="container">
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Pesquisar nos capítulos...">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="highlight">Destacados</button>
+                <button class="filter-btn" data-filter="liberalidade">Liberalidade</button>
+                <button class="filter-btn" data-filter="perigo">Perigos</button>
+            </div>
+        </div>
+        
+        <div class="chapters-grid" id="chaptersContainer">
+            <!-- Capítulo 34 -->
+            <div class="chapter-card" data-category="liberalidade">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 34</div>
+                    <h2 class="chapter-title">É recomendada a liberalidade</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: A liberalidade é elogiada como um princípio celestial, reflexo do caráter de Deus.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">A Essência do Céu:</span> A generosidade não é um acidente, mas a própria natureza do Céu.</li>
+                            <li><span class="highlight">O Princípio da Cruz:</span> A cruz é o maior exemplo de doação, estabelecendo um padrão para os seguidores de Cristo.</li>
+                            <li><span class="highlight">Contraste com o Mundo:</span> Enquanto o mundo busca acumular para ser feliz, o caminho cristão é o da doação.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "O espírito de liberalidade é o espírito do Céu. O abnegado amor de Cristo é revelado na cruz. Para que o homem pudesse ser salvo, deu Ele tudo quanto possuía, e em seguida Se deu a Si mesmo."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 35 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 35</div>
+                    <h2 class="chapter-title">Preciosos à vista de Deus</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: Deus valoriza profundamente aqueles que praticam atos de amor e compaixão.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Aproximação através do Serviço:</span> A prática do amor nos conecta intimamente com o Criador.</li>
+                            <li><span class="highlight">A Tragédia do Egoísmo:</span> Ignorar as necessidades alheias é recusar as bênçãos divinas.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Os que assim se tornam participantes de trabalhos de amor, são levados para mais perto do Criador."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 36 -->
+            <div class="chapter-card" data-category="liberalidade">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 36</div>
+                    <h2 class="chapter-title">Favores recebidos e comunicados</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: Somos canais de bênçãos, chamados a repassar aos outros o que recebemos de Deus.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Dependência Contínua:</span> Nossa existência é um presente constante de Deus.</li>
+                            <li><span class="highlight">A Única Resposta Adequada:</span> A gratidão a Deus só pode ser expressa de uma maneira.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Cada momento somos mantidos pelo cuidado de Deus e sustentados pelo Seu poder."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 37 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 37</div>
+                    <h2 class="chapter-title">Deus está preparando o caminho</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: A providência divina está sempre atuando, abrindo portas para o avanço de Sua obra.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Confiança na Liderança Divina:</span> Devemos reconhecer e seguir a direção de Deus.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        (O capítulo enfatiza que Deus, em Sua providência, está constantemente preparando o caminho e chamando Seu povo para maiores empreendimentos, confiando que Ele suprirá as necessidades.)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 38 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 38</div>
+                    <h2 class="chapter-title">O trabalho da recolta de donativos</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: A coleta de ofertas é uma obra sagrada que deve ser feita com ordem e princípio.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Dar com Propósito:</span> As doações devem ser guiadas por convicção, não apenas por emoção.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Devem os cristãos agir guiados por princípios fixos, seguindo o exemplo de abnegação e de sacrifício-próprio do Salvador."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 39 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 39</div>
+                    <h2 class="chapter-title">O verdadeiro motivo de todo serviço</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: O amor a Deus e às almas é a única motivação aceitável para o serviço e a doação.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Sem Amor, Tudo é Vão:</span> A obra feita sem amor perde seu valor.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "O verdadeiro motivo de todo serviço a Deus e aos homens é nascido do amor ao Redentor."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 40 -->
+            <div class="chapter-card" data-category="liberalidade">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 40</div>
+                    <h2 class="chapter-title">Ofertas voluntárias</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: As ofertas devem ser dadas de forma voluntária, alegre e generosa.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">O Princípio Divino do Dar:</span> A alegria no dar é um indicativo do espírito correto.</li>
+                            <li><span class="highlight">Valor do Sacrifício:</span> A oferta do pobre, dada com sacrifício, tem grande valor.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Deus ama ao que dá com alegria." (2 Coríntios 9:7)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 41 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 41</div>
+                    <h2 class="chapter-title">Métodos populares de apelo</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: Adverte-se contra métodos mundanos e sensacionalistas para arrecadar fundos.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Integridade na Arrecadação:</span> A causa de Deus deve ser sustentada por princípios, não por artifícios.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "São condenados todos os esforços para obter fundos para a causa de Deus por meio de divertimentos, loterias ou quaisquer espécies de especulações."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 42 -->
+            <div class="chapter-card" data-category="perigo">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 42</div>
+                    <h2 class="chapter-title">O perigo da cobiça</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: A cobiça é identificada como idolatria e um perigo mortal para a alma.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">A Natureza da Cobiça:</span> É um pecado que impede a entrada no Céu.</li>
+                            <li><span class="highlight">O Apelo do Calvário:</span> O sacrifício de Cristo é o argumento supremo contra o egoísmo.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Nenhum cobiçoso poderá passar pelos portais de pérola; pois toda cobiça é idolatria."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 43 -->
+            <div class="chapter-card" data-category="perigo">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 43</div>
+                    <h2 class="chapter-title">Procurando servir a Deus e a Mamom</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: É impossível dividir a lealdade entre Deus e as riquezas.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Lealdade Indivisível:</span> O coração não pode servir a dois senhores.</li>
+                            <li><span class="highlight">Entrega Total:</span> O "eu" deve ser rendido completamente a Deus.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Não podeis servir a Deus e a Mamom." (Mateus 6:24)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 44 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 44</div>
+                    <h2 class="chapter-title">Os que professam em vão</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: Uma profissão de fé sem as obras correspondentes (incluindo a generosidade) é inútil.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Fé em Ação:</span> A verdadeira fé se manifesta em um espírito de sacrifício.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Os que crêem nesta solene verdade devem possuir tal espírito de sacrifício que repila a ambição mundana dos adoradores do dinheiro."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 45 -->
+            <div class="chapter-card" data-category="perigo">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 45</div>
+                    <h2 class="chapter-title">O apego às riquezas</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: O apego aos bens terrestres é uma armadilha que impede o preparo para a eternidade.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Conselho Profético:</span> A orientação é para simplificar a vida, não para acumular.</li>
+                            <li><span class="highlight">Visão do Tempo do Fim:</span> No tempo de angústia, as propriedades se tornarão inúteis.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "É agora que nossos irmãos deveriam estar reduzindo suas posses, em vez de aumentá-las. Estamos prestes a mudar-nos para uma terra melhor, a celestial."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 46 -->
+            <div class="chapter-card" data-category="perigo">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 46</div>
+                    <h2 class="chapter-title">A tentação de especular</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: Envolver-se em especulações financeiras arriscadas é uma tentação perigosa.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Foco no Essencial:</span> Os recursos e a energia devem estar no avanço do reino de Deus.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        (O capítulo adverte que a busca por ganhos rápidos através de especulações muitas vezes leva à perda e desvia o coração da confiança em Deus.)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 47 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 47</div>
+                    <h2 class="chapter-title">Investimentos insensatos</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: Gastar com luxo e prazeres egoístas enquanto a causa de Deus sofre é uma tolice.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">A Questão Central:</span> O valor da riqueza é insignificante comparado à salvação das almas.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Que pesa isso na balança, comparado com a salvação das pessoas por quem Cristo, o Filho do infinito Deus, morreu?"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 48 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 48</div>
+                    <h2 class="chapter-title">Vivendo dentro das receitas</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: A vida financeira responsável, vivendo dentro das possibilidades, é uma virtude cristã.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Economia como Virtude:</span> A economia permite ser mais generoso.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Hábitos de economia, operosidade e sobriedade, são melhor quinhão para os vossos filhos que um rico dote."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 49 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 49</div>
+                    <h2 class="chapter-title">Trazendo descrédito à causa de Deus</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: A desonestidade financeira de um crente traz opróbrio sobre toda a igreja e sobre Deus.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">O Nome em Jogo:</span> Nossas ações financeiras refletem no caráter de Deus.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        (A ideia central é que um ato desonesto de um membro faz com que o mundo condene a igreja e o Deus que ela professa servir.)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 50 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 50</div>
+                    <h2 class="chapter-title">Apelo à oração ou mudança de ocupação</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: Se um emprego impede a fidelidade a Deus, deve-se orar e considerar mudar de ocupação.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Prioridade Espiritual:</span> A fidelidade a Deus é mais importante que o sucesso financeiro.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Se a ocupação é de tal natureza que vos impede de devolver a Deus o que Lhe pertence, ou de atender a outros deveres para com Ele, mudai de negócio."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 51 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 51</div>
+                    <h2 class="chapter-title">Pagar as dívidas dos prédios de igreja</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: As igrejas devem trabalhar diligentemente para quitar as dívidas de seus templos.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Liberdade para Avançar:</span> Uma igreja sem dívidas está livre para cumprir sua missão.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "É dever de todo membro da igreja trabalhar com fervor para liquidar a dívida do edifício de culto, a fim de que Deus seja honrado e Sua obra possa avançar."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 52 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 52</div>
+                    <h2 class="chapter-title">Evitando dívidas institucionais</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: As instituições da igreja devem evitar contrair dívidas, crescendo de forma sustentável.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">Crescimento com Fé, não com Dívida:</span> A obra deve avançar conforme Deus provê, não conforme o crédito permite.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "As instituições da igreja não devem contrair dívidas. Devem avançar de acordo com a provisão de Deus, pela fidelidade de Seu povo."
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 53 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 53</div>
+                    <h2 class="chapter-title">Deixando de avaliar o custo</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: É uma insensatez iniciar projetos sem um planejamento financeiro cuidadoso.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">A Parábola Prática:</span> Usa a lição de Jesus para enfatizar a necessidade de calcular as despesas.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Pois qual de vós, querendo edificar uma torre, não se assenta primeiro a fazer as contas dos gastos, para ver se tem o que precisa para acabá-la?" (Lucas 14:28)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Capítulo 54 -->
+            <div class="chapter-card">
+                <div class="chapter-header">
+                    <div class="chapter-number">Capítulo 54</div>
+                    <h2 class="chapter-title">Avançando com fé</h2>
+                </div>
+                <div class="chapter-content">
+                    <div class="theme">Tema Central: Após o planejamento responsável, devemos avançar com coragem e fé na provisão divina.</div>
+                    <div class="key-points">
+                        <ul>
+                            <li><span class="highlight">O Equilíbrio:</span> A fé não elimina a necessidade de planejamento, mas nos impulsiona a agir após termos feito a nossa parte.</li>
+                        </ul>
+                    </div>
+                    <div class="quote">
+                        "Deus honrará a fé viva e a consagração abnegada. Quando Seu povo fizer o que Lhe é possível, Ele fará o que é impossível para os homens."
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="study-tools">
+            <h2 class="tools-title">Ferramentas de Estudo</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h3>Pesquisa</h3>
+                    <p>Use a caixa de pesquisa para encontrar tópicos específicos em todos os capítulos.</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Filtros</h3>
+                    <p>Filtre os capítulos por temas como Liberalidade ou Perigos para focar seu estudo.</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Citações</h3>
+                    <p>Preste atenção especial às citações em destaque - são ideias-chave para a prova.</p>
+                </div>
+                <div class="tool-card">
+                    <h3>Pontos Principais</h3>
+                    <p>Os pontos destacados em amarelo são conceitos fundamentais para memorizar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Resumo para estudo baseado em "Conselhos sobre Mordomia" de Ellen G. White</p>
+        <p>Capítulos 34 a 54</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const chapterCards = document.querySelectorAll('.chapter-card');
+            
+            // Funcionalidade de pesquisa
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                chapterCards.forEach(card => {
+                    const cardText = card.textContent.toLowerCase();
+                    if (cardText.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Funcionalidade de filtro
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Atualizar botões ativos
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Aplicar filtro
+                    chapterCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else if (filter === 'highlight') {
+                            // Mostrar apenas capítulos com destaques
+                            const hasHighlights = card.querySelector('.highlight');
+                            card.style.display = hasHighlights ? 'block' : 'none';
+                        } else {
+                            const category = card.getAttribute('data-category');
+                            card.style.display = category === filter ? 'block' : 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
