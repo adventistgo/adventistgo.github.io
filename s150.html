@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salmos Seleccionados (101-150)</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        nav {
+            background-color: #182848;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .salmo {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .salmo:hover {
+            transform: translateY(-5px);
+        }
+        .salmo h2 {
+            color: #4b6cb7;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .versiculos p {
+            font-style: italic;
+            color: #555;
+            margin: 0.5rem 0;
+        }
+        .versiculos p::before {
+            content: attr(data-verses) " ";
+            color: #4b6cb7;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #182848;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            .salmo h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Salmos Seleccionados (101-150)</h1>
+    </header>
+    <nav>
+      <!--  <a href="#salmo101">Salmo 101</a>
+        <a href="#salmo102">Salmo 102</a>
+        <a href="#salmo103">Salmo 103</a>
+        <a href="#salmo104">Salmo 104</a>
+        <a href="#salmo105">Salmo 105</a>
+        <a href="#salmo106">Salmo 106</a>
+        <a href="#salmo107">Salmo 107</a>
+        <a href="#salmo108">Salmo 108</a>
+        <a href="#salmo109">Salmo 109</a>
+        <a href="#salmo110">Salmo 110</a>
+        <a href="#salmo111">Salmo 111</a>
+        <a href="#salmo112">Salmo 112</a>
+        <a href="#salmo113">Salmo 113</a>
+        <a href="#salmo114">Salmo 114</a>
+        <a href="#salmo115">Salmo 115</a>
+        <a href="#salmo116">Salmo 116</a>
+        <a href="#salmo117">Salmo 117</a>
+        <a href="#salmo118">Salmo 118</a>
+        <a href="#salmo119">Salmo 119</a>
+        <a href="#salmo120">Salmo 120</a>
+        <a href="#salmo121">Salmo 121</a>
+        <a href="#salmo122">Salmo 122</a>
+        <a href="#salmo123">Salmo 123</a>
+        <a href="#salmo124">Salmo 124</a>
+        <a href="#salmo125">Salmo 125</a>
+        <a href="#salmo126">Salmo 126</a>
+        <a href="#salmo127">Salmo 127</a>
+        <a href="#salmo128">Salmo 128</a>
+        <a href="#salmo129">Salmo 129</a>
+        <a href="#salmo130">Salmo 130</a>
+        <a href="#salmo131">Salmo 131</a>
+        <a href="#salmo132">Salmo 132</a>
+        <a href="#salmo133">Salmo 133</a>
+        <a href="#salmo134">Salmo 134</a>
+        <a href="#salmo135">Salmo 135</a>
+        <a href="#salmo136">Salmo 136</a>
+        <a href="#salmo137">Salmo 137</a>
+        <a href="#salmo138">Salmo 138</a>
+        <a href="#salmo139">Salmo 139</a>
+        <a href="#salmo140">Salmo 140</a>
+        <a href="#salmo141">Salmo 141</a>
+        <a href="#salmo142">Salmo 142</a>
+        <a href="#salmo143">Salmo 143</a>
+        <a href="#salmo144">Salmo 144</a>
+        <a href="#salmo145">Salmo 145</a>
+        <a href="#salmo146">Salmo 146</a>
+        <a href="#salmo147">Salmo 147</a>
+        <a href="#salmo148">Salmo 148</a>
+        <a href="#salmo149">Salmo 149</a>
+        <a href="#salmo150">Salmo 150</a> -->
+    </nav>
+    <div class="container">
+        <div class="salmo" id="salmo101">
+            <h2>Salmo 101 - O Compromisso de um Rei com a Integridade</h2>
+            <div class="versiculos">
+                <p data-verses="1-4">Cantarei o teu amor e a tua justiça; a ti, Senhor, cantarei louvores. Viverei de maneira íntegra. Quando virás ao meu encontro? Andarei em minha casa com um coração puro. Não tolerarei coisa alguma vil; odeio a conduta dos infiéis; nada terá a ver comigo. Afasto de mim a perversidade do coração; não terei parte em nenhum mal.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo102">
+            <h2>Salmo 102 - Oração de um Afligido</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Ouve a minha oração, ó Senhor; chegue a ti o meu clamor. Não escondas de mim o teu rosto no dia da minha angústia. Inclina para mim os teus ouvidos; quando clamo, responde-me depressa.</p>
+                <p data-verses="11-12">Os meus dias são como uma sombra que se vai, e eu me seco como a relva. Mas tu, Senhor, permaneces para sempre, e o teu nome perdura de geração em geração.</p>
+                <p data-verses="25-27">Tu, Senhor, no princípio firmaste os fundamentos da terra, e os céus são obras das tuas mãos. Eles perecerão, mas tu permanecerás; envelhecerão como vestimentas. Como roupas tu os mudarás e serão jogados fora. Mas tu permaneces o mesmo, e os teus anos jamais terão fim.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo103">
+            <h2>Salmo 103 - Louvor ao Deus que Perdoa e Cura</h2>
+            <div class="versiculos">
+                <p data-verses="1-5">Bendiga o Senhor a minha alma! Bendiga o Senhor todo o meu ser! Bendiga o Senhor a minha alma e não se esqueça de nenhuma de suas bênçãos! É ele que perdoa todos os seus pecados e cura todas as suas doenças, que resgata a sua vida da sepultura e o coroa de bondade e compaixão, que enche de bens a sua vida, de modo que a sua juventude se renova como a águia.</p>
+                <p data-verses="8-14">O Senhor é compassivo e misericordioso, muito paciente e cheio de amor. Não nos trata conforme os nossos pecados nem nos retribui conforme as nossas iniquidades. Pois como os céus se elevam acima da terra, assim é grande o seu amor para com os que o temem; e como o Oriente está longe do Ocidente, assim ele afasta para longe de nós as nossas transgressões. Como um pai tem compaixão de seus filhos, assim o Senhor tem compaixão dos que o temem; pois ele sabe do que somos formados; lembra-se de que somos pó.</p>
+                <p data-verses="17-18">Mas o amor leal do Senhor, o seu amor eterno, é de eternidade a eternidade sobre os que o temem, e a sua justiça sobre os filhos dos seus filhos, sobre os que guardam a sua aliança e se lembram de obedecer aos seus preceitos.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo104">
+            <h2>Salmo 104 - Hino ao Deus Criador</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Bendiga o Senhor a minha alma! Senhor, meu Deus, tu és tão grandioso! Vestes de majestade e esplendor! Envolto de luz como num manto, estendes os céus como uma tenda.</p>
+                <p data-verses="5">Firmaste a terra sobre os seus fundamentos, para que jamais se abale.</p>
+                <p data-verses="24-25">Quantas são as tuas obras, Senhor! Fizeste todas elas com sabedoria! A terra está cheia de seres que criaste. Eis o mar, imenso e vasto. Nele vivem inúmeras criaturas, seres vivos, pequenos e grandes.</p>
+                <p data-verses="27-28">Todos eles esperam de ti que lhes dês o alimento no tempo certo.</p>
+                <p data-verses="33-35">Enquanto eu viver, louvarei ao Senhor; cantarei louvores ao meu Deus, enquanto eu tiver vida. Que a minha meditação lhe seja agradável; eu me alegrarei no Senhor. Sejam extirpados os pecadores da terra, e não mais haja ímpios! Bendiga o Senhor a minha alma! Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo105">
+            <h2>Salmo 105 - A Fidelidade de Deus na História</h2>
+            <div class="versiculos">
+                <p data-verses="1-5">Dêem graças ao Senhor, invoquem o seu nome; façam conhecidos entre os povos os seus feitos. Cantem para ele, louvem-no; relatem todas as suas maravilhas. Gloriem-se no seu santo nome; alegre-se o coração dos que buscam o Senhor. Busquem o Senhor e o seu poder; busquem sempre a sua presença. Lembrem-se das maravilhas que ele fez, dos seus prodígios e das ordenanças que pronunciou.</p>
+                <p data-verses="7-8">Ele é o Senhor, o nosso Deus; seus juízos pervadem toda a terra. Ele se lembra para sempre da sua aliança, da palavra que ordenou para mil gerações.</p>
+                <p data-verses="42-45">Pois ele se lembrou da sua santa promessa dada a seu servo Abraão. Trouxe o seu povo para fora, cheio de júbilo, e os seus escolhidos, com cânticos de alegria. Deu-lhes as terras das nações, e eles tomaram posse do fruto do trabalho de outros povos, para que obedecessem aos seus preceitos e guardassem as suas leis. Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo106">
+            <h2>Salmo 106 - A Infidelidade de Israel na História</h2>
+            <div class="versiculos">
+                <p data-verses="1">Deem graças ao Senhor porque ele é bom; o seu amor dura para sempre.</p>
+                <p data-verses="4-5">Lembra-te de mim, Senhor, quando mostrares favor ao teu povo; vem em meu auxílio quando o salvares, para que eu veja a prosperidade dos teus escolhidos, para que eu me alegre com a alegria da tua nação e me glorie com a tua herança.</p>
+                <p data-verses="6">Pecamos como os nossos antepassados; fizemos mal e fomos rebeldes.</p>
+                <p data-verses="44-48">Mas ele atentou para a sua aflição quando ouviu o seu clamor; lembrou-se da sua aliança com eles, e arrependeu-se, segundo a sua misericórdia. Fez com que fossem objeto de compaixão por parte de todos os que os haviam levado cativos. Salvai-nos, Senhor, nosso Deus! Reúne-nos dentre as nações, para que demos graças ao teu santo nome e façamos do teu louvor a nossa glória. Bendito seja o Senhor, o Deus de Israel, de eternidade a eternidade! E todo o povo diga: 'Amém!' Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo107">
+            <h2>Salmo 107 - Louvor pelo Livramento de Deus</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Deem graças ao Senhor porque ele é bom; o seu amor dura para sempre. Digam os redimidos do Senhor, aqueles que ele redimiu do poder do inimigo e os reuniu de todas as terras, do oriente e do ocidente, do norte e do sul.</p>
+                <p data-verses="8-9">Deem graças ao Senhor pelo seu amor leal e pelas suas maravilhas em favor dos homens, pois ele sacia a alma sedenta e satisfaz plenamente a alma faminta.</p>
+                <p data-verses="13-16">Clamaram ao Senhor na sua angústia, e ele os livrou da sua tribulação. Tirou-os das trevas e da mais profunda escuridão e quebrou as suas correntes. Deem graças ao Senhor pelo seu amor leal e pelas suas maravilhas em favor dos homens, pois ele quebrou as portas de bronze e despedaçou as trancas de ferro.</p>
+                <p data-verses="19-21">Clamaram ao Senhor na sua angústia, e ele os salvou da sua ruína. Enviou a sua palavra e os curou, e os livrou da morte. Deem graças ao Senhor pelo seu amor leal e pelas suas maravilhas em favor dos homens.</p>
+                <p data-verses="28-31">Clamaram ao Senhor na sua angústia, e ele os tirou da sua dificuldade. Reduziu a tempestade ao silêncio, e as ondas do mar sossegaram. Eles se alegraram com a bonança, e ele os guiou ao porto desejado. Deem graças ao Senhor pelo seu amor leal e pelas suas maravilhas em favor dos homens.</p>
+                <p data-verses="43">Quem é sábio preste atenção nessas coisas e considere o amor leal do Senhor.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo108">
+            <h2>Salmo 108 - Canção de Confiança e Vitória</h2>
+            <div class="versiculos">
+                <p data-verses="1-5">Meu coração está firme, ó Deus! Cantarei e entoarei louvores com toda a minha alma. Despertem, harpa e lira! Despertarei a alvorada. Louvarei entre os povos, Senhor, e cantarei louvores entre as nações. Pois o teu amor é grande, chegando até os céus; a tua fidelidade alcança as nuvens. Sê exaltado, ó Deus, acima dos céus; e que a tua glória esteja sobre toda a terra!</p>
+                <p data-verses="12-13">Dá-nos auxílio contra o adversário, pois inútil é o socorro do homem. Com Deus conquistaremos a vitória, e ele pisará os nossos adversários.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo109">
+            <h2>Salmo 109 - Oração Contra um Inimigo Impiedoso</h2>
+            <div class="versiculos">
+                <p data-verses="1-5">Ó Deus, a quem louvo, não fiques indiferente, pois homens ímpios e falsos dizem calúnias contra mim e me atacam com palavras mentirosas. Eles me cercaram com palavras de ódio e me atacaram sem motivo. Em troca da minha amizade eles me acusam, mas eu não faço senão orar. Eles me retribuem o mal pelo bem, e ódio pela minha amizade.</p>
+                <p data-verses="21">Mas tu, Soberano Senhor, intervém em meu favor, por causa do teu nome. Livra-me, pois o teu amor é bom.</p>
+                <p data-verses="26-31">Ajuda-me, Senhor, meu Deus; salva-me por teu amor. Que saibam que foi a tua mão, que foste tu, Senhor, que o fizeste. Ainda que eles amaldiçoem, tu abençoarás. Se me atacarem, ficarão envergonhados, mas o teu servo se alegrará. Sejam os meus acusadores cobertos de desonra e vestidos de vergonha como um manto. Com a minha boca darei muitas graças ao Senhor; no meio da multidão eu o louvarei, pois ele se coloca ao lado do necessitado para salvá-lo dos que o condenam.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo110">
+            <h2>Salmo 110 - O Sacerdote-Rei Messiânico</h2>
+            <div class="versiculos">
+                <p data-verses="1">Disse o Senhor ao meu senhor: 'Senta-te à minha direita até que eu faça dos teus inimigos um estrado para os teus pés'.</p>
+                <p data-verses="4">O Senhor jurou e não se arrependerá: 'Tu és sacerdote para sempre, segundo a ordem de Melquisedeque'.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo111">
+            <h2>Salmo 111 - As Obras Maravilhosas do Senhor</h2>
+            <div class="versiculos">
+                <p data-verses="1-4">Aleluia! Darei graças ao Senhor de todo o coração na reunião da congregação dos justos. Grandiosas são as obras do Senhor; nelas meditam todos os que as apreciam. Glória e majestade são as suas obras, e a sua justiça permanece para sempre. Ele fez proclamar as suas maravilhas; o Senhor é misericordioso e compassivo.</p>
+                <p data-verses="7-10">As obras das suas mãos são fiéis e justas; todos os seus preceitos merecem confiança. Estão firmados para sempre, para sempre, executados com fidelidade e retidão. Ele enviou redenção ao seu povo e firmou a sua aliança para sempre. Santo e temível é o seu nome. O temor do Senhor é o princípio da sabedoria; todos os que cumprem os seus preceitos revelam bom senso. Ele será louvado para sempre!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo112">
+            <h2>Salmo 112 - As Bênçãos do Justo</h2>
+            <div class="versiculos">
+                <p data-verses="1">Aleluia! Como é feliz aquele que teme ao Senhor e tem grande prazer em seus mandamentos!</p>
+                <p data-verses="4">A luz raia nas trevas para o justo, para quem é misericordioso, compassivo e justo.</p>
+                <p data-verses="6-7">O justo jamais será abalado; para sempre se lembrarão dele. Não temerá más notícias; o seu coração está firme, confiante no Senhor.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo113">
+            <h2>Salmo 113 - Louvor ao Deus que se Inclina</h2>
+            <div class="versiculos">
+                <p data-verses="1-6">Aleluia! Louvem, servos do Senhor, louvem o nome do Senhor! Seja bendito o nome do Senhor, desde agora e para sempre! Do nascente ao poente, seja louvado o nome do Senhor! O Senhor está acima de todas as nações; a sua glória está acima dos céus. Quem é como o Senhor, o nosso Deus, que reina em seu trono nas alturas, mas se inclina para ver o que acontece nos céus e na terra?</p>
+                <p data-verses="7-9">Ele levanta do pó o necessitado e do lixo ergue o pobre, para fazê-los assentar-se com os príncipes, com os príncipes do seu povo. Dá um lar à estéril, e dela faz uma feliz mãe de filhos. Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo114">
+            <h2>Salmo 114 - O Tremor da Criação</h2>
+            <div class="versiculos">
+                <p data-verses="1-8">Quando Israel saiu do Egito, a casa de Jacó, de um povo de língua estrangeira, Judá tornou-se o santuário de Deus, Israel, o seu domínio. O mar olhou e fugiu, o Jordão retrocedeu; os montes saltaram como carneiros, as colinas, como cordeiros. Por que fugir, ó mar? Por que retroceder, ó Jordão? Por que saltar, ó montes, como carneiros? E vós, colinas, como cordeiros? Tremê, ó terra, na presença do Senhor, na presença do Deus de Jacó.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo115">
+            <h2>Salmo 115 - Glória a Deus, Não a Nós</h2>
+            <div class="versiculos">
+                <p data-verses="1">Não a nós, Senhor, nenhuma glória a nós, mas ao teu nome, por teu amor e por tua fidelidade!</p>
+                <p data-verses="3-9">Por que perguntam as nações: 'Onde está o Deus deles?' O nosso Deus está nos céus, e faz tudo o que lhe agrada. Os ídolos deles, de prata e ouro, são feitos por mãos humanas. Têm boca, mas não podem falar; olhos, mas não podem ver; têm ouvidos, mas não podem ouvir; nariz, mas não podem cheirar; têm mãos, mas não podem apalpar; pés, mas não podem andar; nem emitem som algum com a garganta. Tornem-se como eles todos os que neles confiam. Confie, ó Israel, no Senhor! Ele é o seu auxílio e o seu escudo.</p>
+                <p data-verses="16-18">Os céus são os céus do Senhor, mas a terra ele a deu aos homens. Os mortos não louvam o Senhor, tampouco nenhum dos que descem ao silêncio. Mas nós bendiremos o Senhor, desde agora e para sempre! Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo116">
+            <h2>Salmo 116 - Amor em Resposta ao Livramento</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Amo o Senhor porque ele me ouviu quando lhe fiz a minha súplica. Ele inclinou os seus ouvidos para mim; eu o invocarei todos os dias da minha vida.</p>
+                <p data-verses="5-9">O Senhor é misericordioso e justo; o nosso Deus é compassivo. O Senhor protege os simples; quando eu já estava sem forças, ele me salvou. Descanse outra vez, ó minha alma, pois o Senhor tem sido bom para você. Pois tu, Senhor, me livraste da morte, as minhas lágrimas dos meus olhos e os meus pés de tropeçar, para que eu ande diante do Senhor na terra dos viventes.</p>
+                <p data-verses="15-19">Preciosa é aos olhos do Senhor a morte dos seus fiéis. Senhor, sou teu servo; sou teu servo, filho da tua serva; livraste-me das minhas correntes. Oferecerei a ti um sacrifício de gratidão e invocarei o nome do Senhor. Cumprirei os meus votos ao Senhor na presença de todo o seu povo, nos átrios da casa do Senhor, no meio de ti, Jerusalém! Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo117">
+            <h2>Salmo 117 - O Menor e Mais Universal</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Louvem o Senhor, todas as nações; exaltem-no, todos os povos! Pois imenso é o seu amor leal por nós, e a fidelidade do Senhor dura para sempre. Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo118">
+            <h2>Salmo 118 - A Pedra Angular Rejeitada</h2>
+            <div class="versiculos">
+                <p data-verses="1">Deem graças ao Senhor porque ele é bom; o seu amor dura para sempre.</p>
+                <p data-verses="5-9">Na minha angústia clamei ao Senhor; o Senhor me respondeu e me pôs em liberdade. O Senhor está comigo, não temerei. O que me pode fazer o homem? O Senhor está comigo; ele é o meu ajudador. Verei a derrota dos meus inimigos. É melhor refugiar-se no Senhor do que confiar nos homens. É melhor refugiar-se no Senhor do que confiar em príncipes.</p>
+                <p data-verses="14">O Senhor é a minha força e a minha canção; ele é a minha salvação.</p>
+                <p data-verses="17">Não morrerei; mas viverei e proclamarei as obras do Senhor.</p>
+                <p data-verses="22-24">A pedra que os construtores rejeitaram tornou-se a pedra angular. Isso vem do Senhor, e é algo maravilhoso para nós. Este é o dia que o Senhor fez; regozijemo-nos e alegremo-nos nele.</p>
+                <p data-verses="28-29">Tu és o meu Deus, e eu te darei graças; és o meu Deus, e eu te exaltarei. Deem graças ao Senhor porque ele é bom; o seu amor dura para sempre.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo119">
+            <h2>Salmo 119 - Um Hino à Palavra de Deus</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Como são felizes os que andam em caminhos irrepreensíveis, que andam na lei do Senhor! Como são felizes os que obedecem aos seus testemunhos, que o buscam de todo o coração!</p>
+                <p data-verses="9-11">Como pode o jovem manter pura a sua conduta? Vivendo de acordo com a tua palavra. Eu te busco de todo o coração; não permitas que eu me desvie dos teus mandamentos. Guardei no coração a tua palavra para não pecar contra ti.</p>
+                <p data-verses="18">Abre os meus olhos para que eu veja as maravilhas da tua lei.</p>
+                <p data-verses="33-35">Ensina-me, Senhor, o caminho dos teus decretos, e eu os seguirei até o fim. Dá-me entendimento, e eu obedecerei à tua lei; eu a guardarei de todo o coração. Faze-me andar na vereda dos teus mandamentos, pois nela tenho prazer.</p>
+                <p data-verses="89">A tua palavra, Senhor, para sempre está firmada nos céus.</p>
+                <p data-verses="105">Lâmpada para os meus pés é a tua palavra e luz para o meu caminho.</p>
+                <p data-verses="130">A exposição das tuas palavras dá luz e dá entendimento aos simples.</p>
+                <p data-verses="165">Muita paz têm os que amam a tua lei, e nada os faz tropeçar.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo120">
+            <h2>Salmo 120 - O Lamento do Peregrino</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Clamo ao Senhor na minha angústia, e ele me responde. Senhor, livra-me dos lábios mentirosos e da língua traiçoeira!</p>
+                <p data-verses="5-7">Ai de mim, que vivo como estrangeiro em Meseque, que habito entre as tendas de Quedar! Há muito tempo vivo entre aqueles que odeiam a paz. Sou a favor da paz; mas, quando falo, eles são a favor da guerra.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo121">
+            <h2>Salmo 121 - Ajuda do Alto</h2>
+            <div class="versiculos">
+                <p data-verses="1-8">Ergo os meus olhos para os montes e pergunto: De onde me vem o socorro? O meu socorro vem do Senhor, que fez os céus e a terra. Ele não permitirá que os teus pés vacilem; não dormirá aquele que te guarda. Sim, é certo que não dormirá nem dormitará aquele que guarda Israel. O Senhor é quem te guarda; o Senhor é a tua sombra à tua direita. De dia o sol não te ferirá, nem a lua de noite. O Senhor te guardará de todo o mal; guardará a tua vida. O Senhor guardará a tua saída e a tua entrada, desde agora e para sempre.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo122">
+            <h2>Salmo 122 - Alegria em Jerusalém</h2>
+            <div class="versiculos">
+                <p data-verses="1">Alegrei-me com os que me disseram: 'Vamos à casa do Senhor!'</p>
+                <p data-verses="6-9">Orem pela paz de Jerusalém: 'Vivam em segurança aqueles que te amam! Haja paz dentro dos teus muros e segurança nas tuas cidadelas!' Por causa dos meus irmãos e amigos, direi: 'Paz seja contigo!' Por causa da casa do Senhor, nosso Deus, buscarei o seu bem.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo123">
+            <h2>Salmo 123 - Olhos Voltados para o Senhor</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Ergo os meus olhos para ti, que habitas nos céus. Assim como os olhos dos servos estão atentos à mão do seu senhor, e como os olhos da serva estão atentos à mão de sua senhora, assim os nossos olhos estão voltados para o Senhor, nosso Deus, até que ele tenha misericórdia de nós.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo124">
+            <h2>Salmo 124 - O Nosso Socorro está no Nome do Senhor</h2>
+            <div class="versiculos">
+                <p data-verses="1-8">Se o Senhor não estivesse do nosso lado', que Israel o repita, 'se o Senhor não estivesse do nosso lado quando os homens nos atacaram, teriam nos engolido vivos quando a sua ira se acendeu contra nós; as águas teriam nos afogado, e a torrente teria passado sobre nós; sim, as águas impetuosas teriam passado sobre nós'. Bendito seja o Senhor, que não nos entregou para sermos dilacerados pelos dentes deles. Escapamos como um pássaro do laço do caçador; o laço quebrou-se, e nós escapamos. O nosso socorro está no nome do Senhor, que fez os céus e a terra.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo125">
+            <h2>Salmo 125 - A Segurança do que Confia no Senhor</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Os que confiam no Senhor são como o monte Sião, que não se pode abalar, mas permanece para sempre. Assim como os montes cercam Jerusalém, o Senhor protege o seu povo, desde agora e para sempre.</p>
+                <p data-verses="4-5">Faze o bem, ó Senhor, aos bons, aos que são retos de coração. Mas, quanto aos que se desviam para os seus caminhos tortuosos, levá-los-á o Senhor com os malfeitores. Que a paz esteja sobre Israel!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo126">
+            <h2>Salmo 126 - Sonhos que se Tornam Realidade</h2>
+            <div class="versiculos">
+                <p data-verses="1-6">Quando o Senhor trouxe os cativos de volta a Sião, foi como um sonho. Então a nossa boca encheu-se de riso, e a nossa língua de cantos de alegria. Então se dizia entre as nações: 'O Senhor fez coisas grandiosas por eles'. Sim, coisas grandiosas fez o Senhor por nós, por isso estamos alegres. Restaura, Senhor, a nossa sorte, como as correntes no deserto. Os que semeiam com lágrimas, com cantos de alegria colherão. Aquele que sai chorando enquanto lança a semente, voltará com cantos de alegria, trazendo os seus feixes.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo127">
+            <h2>Salmo 127 - A Inutilidade do Trabalho sem Deus</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Se o Senhor não construir a casa, será inútil trabalhar na construção. Se o Senhor não proteger a cidade, será inútil a sentinela montar guarda. Inútil é levantar cedo e dormir tarde, trabalhando arduamente por alimento. O Senhor concede o sono àqueles a quem ele ama.</p>
+                <p data-verses="3-5">Os filhos são herança do Senhor, uma recompensa que ele dá. Como flechas na mão do guerreiro são os filhos nascidos na juventude. Como é feliz o homem cuja aljava está cheia deles! Não serão envergonhados quando enfrentarem seus inimigos no tribunal.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo128">
+            <h2>Salmo 128 - A Bem-Aventurança do que Teme ao Senhor</h2>
+            <div class="versiculos">
+                <p data-verses="1-6">Como é feliz quem teme ao Senhor, quem anda em seus caminhos! Você comerá do fruto do seu trabalho e será feliz e próspero. Sua esposa será como videira frutífera em sua casa; seus filhos serão como brotos de oliveira ao redor da sua mesa. Assim é abençoado o homem que teme ao Senhor! Que o Senhor o abençoe desde Sião, para que você veja a prosperidade de Jerusalém todos os dias da sua vida, e veja os filhos dos seus filhos. Paz sobre Israel!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo129">
+            <h2>Salmo 129 - Oração Contra os Oprimidores</h2>
+            <div class="versiculos">
+                <p data-verses="1-4">Muito me oprimiram desde a minha juventude', que Israel o repita; 'muito me oprimiram desde a minha juventude, mas não me venceram. Passaram o arado sobre as minhas costas e fizeram longos sulcos. O Senhor é justo! Ele quebrou as correntes dos ímpios'.</p>
+                <p data-verses="8">E ninguém que passa por eles diz: 'Que a bênção do Senhor esteja sobre vocês! Nós os abençoamos em nome do Senhor'.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo130">
+            <h2>Salmo 130 - Das Profundezas ao Perdão</h2>
+            <div class="versiculos">
+                <p data-verses="1-8">Das profundezas clamo a ti, Senhor; ouve, Senhor, a minha voz! Estejam os teus ouvidos atentos à voz da minha súplica. Se tu, Senhor, contares as iniquidades, quem, Senhor, subsistirá? Mas contigo está o perdão, para que sejas temido. Aguardo o Senhor, a minha alma o aguarda, e em sua palavra ponho a minha esperança. A minha alma anseia pelo Senhor, mais do que os guardas pelo romper da manhã. Ponha Israel a sua esperança no Senhor, pois no Senhor há amor leal, e nele há plena redenção. Ele redimirá Israel de todas as suas iniquidades.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo131">
+            <h2>Salmo 131 - Uma Alma Serena e Confiante</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Senhor, o meu coração não é orgulhoso, e os meus olhos não são arrogantes. Não me envolvo com coisas grandiosas nem maravilhosas demais para mim. Ao contrário, fiz acalmar e sossegar a minha alma; como uma criança desmamada no colo de sua mãe, como uma criança desmamada está a minha alma para comigo. Espere, ó Israel, no Senhor, desde agora e para sempre!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo132">
+            <h2>Salmo 132 - Oração pela Dinastia de Davi</h2>
+            <div class="versiculos">
+                <p data-verses="1-5">Senhor, lembra-te de Davi e de todas as suas dificuldades. Ele fez um juramento ao Senhor, um voto ao Poderoso de Jacó: 'Não entrarei na minha tenda, nem me deitarei em meu leito; não darei sono aos meus olhos, nem repouso às minhas pálpebras, até que eu encontre um lugar para o Senhor, uma habitação para o Poderoso de Jacó'.</p>
+                <p data-verses="11-12">O Senhor jurou a Davi, um juramento seguro que não revogará: 'Colocarei um dos seus próprios descendentes no teu trono. Se os teus filhos guardarem a minha aliança e os testemunhos que eu lhes ensinarei, também os filhos deles se assentarão para sempre no teu trono'.</p>
+                <p data-verses="13-18">Pois o Senhor escolheu Sião, desejou-a para a sua habitação: 'Este é o meu local de descanso para sempre; aqui habitarei, pois o desejei. Abençoarei com abundância os seus mantimentos; saciarei de pão os seus necessitados. Vestirei de salvação os seus sacerdotes, e os seus fiéis aclamarão de alegria. Ali farei florescer o poder de Davi e acenderei a lâmpada do meu ungido. Vestirei de vergonha os seus inimigos, mas a coroa do seu ungido brilhará'.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo133">
+            <h2>Salmo 133 - A Beleza da União</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Como é bom e agradável quando os irmãos convivem em união! É como o óleo precioso derramado sobre a cabeça, que desce pela barba, a barba de Arão, até a gola das suas vestes. É como o orvalho do Hermom quando desce sobre os montes de Sião. Ali o Senhor concede a bênção da vida para sempre.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo134">
+            <h2>Salmo 134 - Bênção Final no Santuário</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Bendigam o Senhor, todos os servos do Senhor, que servem de noite na casa do Senhor! Levantem as mãos na direção do santuário e bendigam o Senhor! Da parte de Sião os abençoe o Senhor, que fez os céus e a terra!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo135">
+            <h2>Salmo 135 - Louvor pelo Poder e Misericórdia de Deus</h2>
+            <div class="versiculos">
+                <p data-verses="1-7">Aleluia! Louvem o nome do Senhor; louvem-no, servos do Senhor, vocês que servem na casa do Senhor, nos pátios da casa do nosso Deus. Louvem o Senhor, pois o Senhor é bom; cantem louvores ao seu nome, pois é nome amável. Pois o Senhor escolheu Jacó para si, Israel como seu tesouro pessoal. Sei que o Senhor é grande, que o nosso Soberano é maior do que todos os deuses. O Senhor faz tudo o que lhe agrada, nos céus e na terra, nos mares e em todas as suas profundezas.</p>
+                <p data-verses="13-18">O teu nome, Senhor, permanece para sempre, a tua fama, Senhor, por todas as gerações. Pois o Senhor julgará o seu povo e terá compaixão dos seus servos. Os ídolos das nações são de prata e ouro, feitos por mãos humanas. Têm boca, mas não podem falar, olhos, mas não podem ver; têm ouvidos, mas não podem ouvir, nem há respiração em sua boca. Tornem-se como eles todos os que neles confiam, ó Israel!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo136">
+            <h2>Salmo 136 - Seu Amor Dura para Sempre</h2>
+            <div class="versiculos">
+                <p data-verses="1-9">Deem graças ao Senhor porque ele é bom; o seu amor dura para sempre. Deem graças ao Deus dos deuses; o seu amor dura para sempre. Deem graças ao Senhor dos senhores; o seu amor dura para sempre. Àquele que sozinho faz grandes maravilhas; o seu amor dura para sempre. Àquele que com entendimento fez os céus; o seu amor dura para sempre. Àquele que sobre as águas estendeu a terra; o seu amor dura para sempre. Àquele que fez os grandes luzeiros; o seu amor dura para sempre. O sol para governar o dia; o seu amor dura para sempre. A lua e as estrelas para governarem a noite; o seu amor dura para sempre.</p>
+                <p data-verses="23-26">Ele se lembrou de nós em nossa humilhação; o seu amor dura para sempre. E nos libertou dos nossos inimigos; o seu amor dura para sempre. Ele dá alimento a todos os seres vivos; o seu amor dura para sempre. Deem graças ao Deus dos céus; o seu amor dura para sempre.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo137">
+            <h2>Salmo 137 - Lamento no Exílio</h2>
+            <div class="versiculos">
+                <p data-verses="1-6">Às margens dos rios da Babilônia nós nos sentamos e choramos com saudade de Sião. Nos salgueiros que lá havia penduramos as nossas harpas, pois ali os nossos captores nos pediam canções; os nossos opressores exigiam canções de alegria, dizendo: 'Cantem para nós uma das canções de Sião!' Como poderíamos cantar as canções do Senhor numa terra estrangeira? Se eu me esquecer de você, ó Jerusalém, que a minha mão direita definhe! Que a minha língua se apegue ao céu da boca, se eu não me lembrar de você, se não considerar Jerusalém a minha maior alegria!</p>
+                <p data-verses="8-9">Ó filha da Babilônia, destinada à destruição, como é feliz aquele que lhe retribuir o mal que você nos fez! Como é feliz aquele que pegar os seus filhos e esmagá-los contra a rocha!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo138">
+            <h2>Salmo 138 - Ação de Graças pela Fidelidade de Deus</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">De todo o coração eu te louvo; diante dos deuses a ti canto louvares. Inclinei-me para o teu santo templo e louvarei o teu nome por teu amor e por tua fidelidade, pois exaltaste acima de todas as coisas o teu nome e a tua palavra. Quando clamei, tu me respondeste e me deste forças e coragem.</p>
+                <p data-verses="6-8">Ainda que o Senhor seja excelso, atenta para o humilde, mas ao soberbo mantém distante. Ainda que eu ande angustiado, tu me preservas a vida; estendes a tua mão contra a ira dos meus inimigos; a tua direita me salva. O Senhor realizará o que me concerne; o teu amor, Senhor, dura para sempre; não abandones as obras das tuas mãos!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo139">
+            <h2>Salmo 139 - O Deus Onisciente e Onipresente</h2>
+            <div class="versiculos">
+                <p data-verses="1-12">Senhor, tu me sondas e me conheces. Sabes quando me sento e quando me levanto; de longe percebes os meus pensamentos. Sabes muito bem quando trabalho e quando descanso; todos os meus caminhos te são bem conhecidos. Antes mesmo que a palavra me chegue à língua, tu já a conheces inteiramente, Senhor. Tu me cercas por trás e por diante e pões a tua mão sobre mim. Tal conhecimento é maravilhoso demais para mim, é tão elevado que não posso atingir. Para onde poderia eu escapar do teu Espírito? Para onde poderia fugir da tua presença? Se eu subir aos céus, lá estás; se eu fizer a minha cama na sepultura, também lá estás. Se eu subir com as asas da alvorada e morar na extremidade do mar, mesmo ali a tua mão direita me guiará e me susterá. Se eu disser: 'Que as trevas me encubram, e a luz se torne noite ao meu redor', nem as trevas serão escuras para ti. A noite brilhará como o dia, pois para ti as trevas são luz.</p>
+                <p data-verses="13-16">Tu criaste o meu mais íntimo ser; entreteceste-me no ventre de minha mãe. Eu te louvo porque me fizeste de modo especial e admirável. Tuas obras são maravilhosas! Disso tenho plena certeza. Meus ossos não estavam escondidos de ti quando em secreto fui formado e entretecido como nas profundezas da terra. Os teus olhos viram o meu embrião; todos os dias determinados para mim foram escritos no teu livro antes de qualquer deles existir.</p>
+                <p data-verses="17-18">Como são preciosos para mim os teus pensamentos, ó Deus! Como é grande a soma deles! Se eu os contasse, seriam mais do que os grãos de areia. Se terminasse de contá-los, eu ainda estaria contigo.</p>
+                <p data-verses="23-24">Sonda-me, ó Deus, e conhece o meu coração; prova-me e conhece os meus pensamentos. Vê se em minha conduta algo te ofende e dirige-me pelo caminho eterno.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo140">
+            <h2>Salmo 140 - Oração por Proteção Contra os Violentos</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Livra-me, Senhor, dos homens maus; protege-me dos violentos, que no coração tramam planos perversos e estão sempre provocando guerra.</p>
+                <p data-verses="4">Protege-me, Senhor, das mãos dos ímpios; protege-me dos violentos, que pretendem fazer-me tropeçar.</p>
+                <p data-verses="12-13">Sei que o Senhor defenderá a causa do necessitado e fará justiça aos pobres. Certamente os justos te louvarão, e os retos habitarão na tua presença.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo141">
+            <h2>Salmo 141 - Uma Oração por Santidade e Proteção</h2>
+            <div class="versiculos">
+                <p data-verses="1-4">Senhor, eu te chamo; vem depressa! Ouve a minha voz quando te invoco. Seja a minha oração como incenso diante de ti, e o levantar das minhas mãos como oferta da tarde. Põe uma guarda, Senhor, à minha boca; vigia a porta de meus lábios. Não permitas que o meu coração se incline para o mal, para a prática da perversidade na companhia daqueles que são malfeitores.</p>
+                <p data-verses="8-10">Mas os meus olhos estão voltados para ti, ó Soberano Senhor; em ti me refugio; não me entregues à morte. Protege-me dos laços que me armaram, das armadilhas dos que praticam o mal. Que os ímpios caiam na própria rede, mas que eu passe incólume.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo142">
+            <h2>Salmo 142 - Ninguém se Importa Comigo</h2>
+            <div class="versiculos">
+                <p data-verses="1-7">Em alta voz clamo ao Senhor; em alta voz suplico ao Senhor. Derramo diante dele o meu lamento; a ele apresento a minha angústia. Quando o meu espírito desanima, és tu quem conhece o meu caminho. No caminho em que ando armam uma cilada contra mim. Olho para a minha direita e vejo; ninguém se importa comigo. Não tenho ninguém que me proteja; ninguém se preocupa comigo. Clamo a ti, Senhor, e digo: 'Tu és o meu refúgio; és tudo o que tenho na terra dos viventes'. Dá atenção ao meu clamor, pois estou muito abatido; livra-me dos que me perseguem, pois são mais fortes do que eu. Tira-me desta prisão, e louvarei o teu nome. Então os justos se reunirão à minha volta, por causa da tua bondade para comigo.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo143">
+            <h2>Salmo 143 - Oração de um Servo Abatido</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Senhor, ouve a minha oração, escuta as minhas súplicas; responde-me por tua fidelidade e por tua justiça. Não leves o teu servo a julgamento, pois ninguém é justo diante de ti.</p>
+                <p data-verses="7-10">Responde-me depressa, Senhor! O meu espírito desfalece. Não escondas de mim o teu rosto, ou serei como os que descem à cova. Faze-me ouvir do teu amor leal pela manhã, pois em ti confio. Mostra-me o caminho que devo seguir, pois a ti elevo a minha alma. Livra-me dos meus inimigos, Senhor, pois em ti me abrigo. Ensina-me a fazer a tua vontade, pois tu és o meu Deus; que o teu bondoso Espírito me conduza por terreno plano.</p>
+                <p data-verses="11-12">Preserva a minha vida, Senhor, por causa do teu nome; por tua justiça, tira-me da angústia. E no teu amor leal, silencia os meus inimigos; destrói todos os meus adversários, pois sou teu servo.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo144">
+            <h2>Salmo 144 - Oração por Vitória e Prosperidade</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Bendito seja o Senhor, a minha Rocha, que treina as minhas mãos para a guerra e os meus dedos para a batalha. Ele é o meu aliado fiel, a minha fortaleza, a minha torre de proteção e o meu libertador; é o meu escudo, aquele em que me refugio, que subjuga nações a mim.</p>
+                <p data-verses="3-4">Senhor, que é o homem, para que com ele te importes? Que é o filho do homem, para que com ele te preocupes? O homem é como um sopro; os seus dias, como sombra passageira.</p>
+                <p data-verses="15">Como é feliz o povo a quem isso acontece! Como é feliz o povo cujo Deus é o Senhor!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo145">
+            <h2>Salmo 145 - Um Hino à Grandeza e Bondade de Deus</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Eu te exaltarei, meu Deus e Rei, e bendirei o teu nome para sempre e sempre. Todos os dias te bendirei e louvarei o teu nome para sempre e sempre. Grande é o Senhor e digno de todo louvor; a sua grandeza não tem limites.</p>
+                <p data-verses="8-9">O Senhor é misericordioso e compassivo, paciente e cheio de amor. O Senhor é bom para todos; a sua compaixão alcança todas as suas criaturas.</p>
+                <p data-verses="13-21">O teu reino é reino eterno, e o teu domínio permanece de geração em geração. O Senhor é fiel em todas as suas promessas e é bondoso em tudo o que faz. O Senhor ampara todos os que caem e levanta todos os que estão prostrados. Os olhos de todos esperam em ti, e tu lhes dás o seu alimento no tempo certo. Abres a tua mão e satisfazes os desejos de todos os seres vivos. O Senhor é justo em todos os seus caminhos e é bondoso em tudo o que faz. O Senhor está perto de todos os que o invocam, de todos os que o invocam com sinceridade. Ele realiza os desejos daqueles que o temem; ouve-os gritar por socorro e os salva. O Senhor protege todos os que o amam, mas a todos os ímpios ele destruirá. A minha boca falará o louvor do Senhor; que todo ser vivo bendiga o seu santo nome para sempre e sempre.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo146">
+            <h2>Salmo 146 - Confiança no Rei Eterno</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Aleluia! Louve o Senhor a minha alma! Louvarei o Senhor por toda a minha vida; cantarei louvores ao meu Deus enquanto eu viver.</p>
+                <p data-verses="3-6">Não confiem em príncipes, em meros mortais, incapazes de salvar. Quando o espírito deles se vai, eles voltam ao pó; naquele mesmo dia acabam-se os seus planos. Como é feliz aquele cujo auxílio é o Deus de Jacó, cuja esperança está no Senhor, no seu Deus, que fez os céus e a terra, o mar e tudo o que neles há, e que mantém a sua fidelidade para sempre!</p>
+                <p data-verses="7-10">Ele defende a causa dos oprimidos e dá alimento aos famintos. O Senhor liberta os prisioneiros. O Senhor dá vista aos cegos, o Senhor levanta os abatidos, o Senhor ama os justos. O Senhor protege o estrangeiro e ampara o órfão e a viúva, mas frustra o propósito dos ímpios. O Senhor reina para sempre! O teu Deus, ó Sião, reina de geração em geração. Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo147">
+            <h2>Salmo 147 - Louvor ao Construtor e Sustentador</h2>
+            <div class="versiculos">
+                <p data-verses="1">Como é bom cantar louvores ao nosso Deus! Como é agradável e próprio louvá-lo!</p>
+                <p data-verses="3-6">Ele cura os quebrantados de coração e cuida das suas feridas. Determina o número de estrelas e chama cada uma pelo nome. Grande é o nosso Soberano e tremendo é o seu poder; a sua sabedoria não tem limites. O Senhor sustém o humilde, mas traz os ímpios até o pó.</p>
+                <p data-verses="10-11">O Senhor não se agrada da força do cavalo, nem se compraz na grandeza do homem. O Senhor se agrada dos que o temem, dos que colocam a sua esperança no seu amor leal.</p>
+                <p data-verses="15-18">Ele envia a sua palavra à terra, e a sua palavra corre veloz. Ele faz cair a neve como lã e espalha a geada como cinza. Ele lança o seu gelo em pedaços; quem pode resistir ao seu frio? Envia a sua palavra, e os derrete; faz soprar o vento, e as águas correm.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo148">
+            <h2>Salmo 148 - Convite Universal de Louvor</h2>
+            <div class="versiculos">
+                <p data-verses="1-5">Aleluia! Louvem o Senhor desde os céus, louvem-no nas alturas! Louvem-no, todos os seus anjos, louvem-no, todos os seus exércitos celestiais! Louvem-no, sol e lua, louvem-no, todas as estrelas cintilantes! Louvem-no, céus dos céus e as águas acima dos céus! Louvem o nome do Senhor, pois ele deu a ordem, e eles foram criados.</p>
+                <p data-verses="7-13">Louvem o Senhor desde a terra, monstros marinhos e todas as profundezas, relâmpagos e granizo, neve e neblina, ventos tempestuosos que executam a sua palavra, montes e todas as colinas, árvores frutíferas e todos os cedros, animais selvagens e todos os rebanhos, criaturas que se movem pelo chão e aves que voam, reis da terra e todas as nações, todos os príncipes e governantes da terra, moços e moças, velhos e crianças. Louvem o nome do Senhor, pois só o seu nome é exaltado; a sua majestade está acima da terra e dos céus.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo149">
+            <h2>Salmo 149 - Louvor com Dança e Espada</h2>
+            <div class="versiculos">
+                <p data-verses="1-4">Aleluia! Cantem ao Senhor uma nova canção, louvem-no na assembleia dos fiéis. Alegre-se Israel no seu Criador, exulte o povo de Sião no seu Rei! Louvem o nome do Senhor com danças; cantem-lhe louvores com tamborim e harpa. O Senhor agrada-se do seu povo; ele coroa de salvação os oprimidos.</p>
+                <p data-verses="6-9">Estejam na sua garganta os louvores de Deus e na sua mão uma espada de dois gumes, para executar vingança nas nações e punir os povos, para prender os seus reis com grilhões e seus nobres com algemas de ferro, para executar a sentença escrita contra eles. Esta é a glória de todos os seus fiéis. Aleluia!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo150">
+            <h2>Salmo 150 - O Grande Finale: Louvor com Tudo</h2>
+            <div class="versiculos">
+                <p data-verses="1-6">Aleluia! Louvem a Deus no seu santuário, louvem-no no seu magnífico firmamento. Louvem-no pelos seus feitos poderosos, louvem-no conforme a imensidão da sua grandeza! Louvem-no ao som de trombeta, louvem-no com a lira e a harpa! Louvem-no com tamborins e danças, louvem-no com instrumentos de cordas e com flautas! Louvem-no com címbalos sonoros, louvem-no com címbalos resonantes! Tudo o que tem fôlego louve ao Senhor! Aleluia!</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Salmos Seleccionados (101-150). Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
