@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salmos Seleccionados</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        nav {
+            background-color: #182848;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .salmo {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .salmo:hover {
+            transform: translateY(-5px);
+        }
+        .salmo h2 {
+            color: #4b6cb7;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .versiculos p {
+            font-style: italic;
+            color: #555;
+            margin: 0.5rem 0;
+        }
+        .versiculos p::before {
+            content: attr(data-verses) " ";
+            color: #4b6cb7;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #182848;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            .salmo h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Salmos Seleccionados</h1>
+    </header>
+    <nav>
+        <a href="#salmo1">Salmo 1</a>
+        <a href="#salmo2">Salmo 2</a>
+        <a href="#salmo3">Salmo 3</a>
+        <a href="#salmo4">Salmo 4</a>
+        <a href="#salmo5">Salmo 5</a>
+        <a href="#salmo6">Salmo 6</a>
+        <a href="#salmo7">Salmo 7</a>
+        <a href="#salmo8">Salmo 8</a>
+        <a href="#salmo9">Salmo 9</a>
+        <a href="#salmo10">Salmo 10</a>
+        <a href="#salmo11">Salmo 11</a>
+        <a href="#salmo12">Salmo 12</a>
+        <a href="#salmo13">Salmo 13</a>
+        <a href="#salmo14">Salmo 14</a>
+        <a href="#salmo15">Salmo 15</a>
+        <a href="#salmo16">Salmo 16</a>
+        <a href="#salmo17">Salmo 17</a>
+        <a href="#salmo18">Salmo 18</a>
+        <a href="#salmo19">Salmo 19</a>
+        <a href="#salmo20">Salmo 20</a>
+        <a href="#salmo21">Salmo 21</a>
+        <a href="#salmo22">Salmo 22</a>
+        <a href="#salmo23">Salmo 23</a>
+        <a href="#salmo24">Salmo 24</a>
+        <a href="#salmo25">Salmo 25</a>
+        <a href="#salmo26">Salmo 26</a>
+        <a href="#salmo27">Salmo 27</a>
+        <a href="#salmo28">Salmo 28</a>
+        <a href="#salmo29">Salmo 29</a>
+        <a href="#salmo30">Salmo 30</a>
+        <a href="#salmo31">Salmo 31</a>
+        <a href="#salmo32">Salmo 32</a>
+        <a href="#salmo33">Salmo 33</a>
+        <a href="#salmo34">Salmo 34</a>
+        <a href="#salmo35">Salmo 35</a>
+        <a href="#salmo36">Salmo 36</a>
+        <a href="#salmo37">Salmo 37</a>
+        <a href="#salmo38">Salmo 38</a>
+        <a href="#salmo39">Salmo 39</a>
+        <a href="#salmo40">Salmo 40</a>
+        <a href="#salmo41">Salmo 41</a>
+        <a href="#salmo42">Salmo 42</a>
+        <a href="#salmo43">Salmo 43</a>
+        <a href="#salmo44">Salmo 44</a>
+        <a href="#salmo45">Salmo 45</a>
+        <a href="#salmo46">Salmo 46</a>
+        <a href="#salmo47">Salmo 47</a>
+        <a href="#salmo48">Salmo 48</a>
+        <a href="#salmo49">Salmo 49</a>
+        <a href="#salmo50">Salmo 50</a>
+    </nav>
+    <div class="container">
+        <div class="salmo" id="salmo1">
+            <h2>Salmo 1 - Os Dois Caminhos</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Como é feliz aquele que não segue o conselho dos ímpios, não imita a conduta dos pecadores, nem se assenta na roda dos zombadores! Ao contrário, sua satisfação está na lei do Senhor, e nessa lei medita dia e noite. É como árvore plantada à beira de águas correntes: Dá fruto no tempo certo e suas folhas não murcham. Tudo o que ele faz prospera!</p>
+                <p data-verses="6">Pois o Senhor aprova o caminho dos justos, mas o caminho dos ímpios leva à destruição!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo2">
+            <h2>Salmo 2 - O Rei Ungido por Deus</h2>
+            <div class="versiculos">
+                <p data-verses="1-4">Por que se amotinam as nações e os povos conspiram em vão? Os reis da terra tomam posição e os governantes conspiram unidos contra o Senhor e contra o seu ungido, e dizem: 'Romperemos as suas correntes e lançaremos de nós as suas algemas!' Do seu trono nos céus o Senhor põe-se a rir e caçoa deles.</p>
+                <p data-verses="7-8">Proclamarei o decreto do Senhor: Ele me disse: 'Tu és meu filho; eu hoje te gerei. Pede-me, e te darei as nações como herança e os confins da terra como tua propriedade.'</p>
+                <p data-verses="11-12">Sirvam ao Senhor com temor; com tremor beijem os pés do seu filho, para que ele não se ire e vocês não sejam destruídos de repente, pois num instante acende-se a sua ira. Como é feliz todos os que nele se refugiam!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo3">
+            <h2>Salmo 3 - O Escudo em Tempo de Angústia</h2>
+            <div class="versiculos">
+                <p data-verses="1-8">Senhor, como são muitos os meus inimigos! Muitos se rebelam contra mim! Muitos são que dizem a meu respeito: 'Deus nunca o salvará!' Mas tu, Senhor, és o escudo que me protege; és a minha glória e aquele que me ergue a cabeça. Ao Senhor clamo em alta voz, e do seu santo monte ele me responde. Eu me deito e durmo, e torno a acordar, porque é o Senhor que me sustém. Não temo os milhares que me cercam. Levanta-te, Senhor! Salva-me, Deus meu! Pois tu quebras a mandíbula de todos os meus inimigos; arrebentas os dentes dos ímpios. Do Senhor vem o livramento. A tua bênção está sobre o teu povo.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo4">
+            <h2>Salmo 4 - Paz na Inquietação</h2>
+            <div class="versiculos">
+                <p data-verses="3">Saibam, portanto, que o Senhor escolheu o piedoso para ser seu. O Senhor ouve quando eu o chamo.</p>
+                <p data-verses="5">Ofereçam sacrifícios como Deus exige e confiem no Senhor.</p>
+                <p data-verses="8">Em paz me deito e logo adormeço, pois só tu, Senhor, me fazes viver em segurança.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo5">
+            <h2>Salmo 5 - Oração Matinal por Justiça</h2>
+            <div class="versiculos">
+                <p data-verses="3">De manhã ouves o meu clamor; de manhã apresento a ti a minha oração e aguardo com esperança.</p>
+                <p data-verses="11-12">Alegrem-se, porém, todos os que em ti se refugiam; cantem sempre de alegria. Estende sobre eles a tua proteção, para que em ti exultem os que amam o teu nome. Pois tu, Senhor, abençoas o justo; o surrounds com o teu favor como com um escudo.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo6">
+            <h2>Salmo 6 - Oração por Misericórdia na Aflição</h2>
+            <div class="versiculos">
+                <p data-verses="2-3">Senhor, não me castigues na tua ira nem me disciplines no teu furor. Misericórdia, Senhor, pois vou desfalecendo! Cura-me, Senhor, pois os meus ossos tremem.</p>
+                <p data-verses="6">Já me cansei de tanto gemer. De tanto chorar, inundo de noite a minha cama e de lágrimas o meu leito.</p>
+                <p data-verses="9">O Senhor ouve o meu choro; o Senhor aceita a minha oração.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo7">
+            <h2>Salmo 7 - Deus, o Juiz Justo</h2>
+            <div class="versiculos">
+                <p data-verses="10-11">O meu escudo está nas mãos de Deus, que salva o reto de coração. Deus é um juiz justo, um Deus que sente indignação todos os dias.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo8">
+            <h2>Salmo 8 - A Glória de Deus e a Dignidade do Homem</h2>
+            <div class="versiculos">
+                <p data-verses="1">Senhor, Senhor nosso, como é majestoso o teu nome em toda a terra! Tu, cuja glória é cantada acima dos céus.</p>
+                <p data-verses="3-5">Quando contemplo os teus céus, obra dos teus dedos, a lua e as estrelas que ali firmaste, pergunto: Que é o homem, para que com ele te importes? E o filho do homem, para que com ele te preocupes? Tu o fizeste um pouco menor do que os seres celestiais e o coroaste de glória e de honra.</p>
+                <p data-verses="9">Senhor, Senhor nosso, como é majestoso o teu nome em toda a terra!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo9">
+            <h2>Salmo 9 - Louvor pelo Juízo Justo</h2>
+            <div class="versiculos">
+                <p data-verses="9-10">O Senhor é refúgio para os oprimidos, uma torre segura na hora da adversidade. Os que conhecem o teu nome confiam em ti, pois tu, Senhor, jamais abandonas os que te buscam.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo10">
+            <h2>Salmo 10 - Clamor Contra a Opressão do Ímpio</h2>
+            <div class="versiculos">
+                <p data-verses="17-18">Tu, Senhor, ouves a súplica dos necessitados; tu os reanimas e atendes ao seu clamor. Defendes o órfão e o oprimido, a fim de que o homem, que é da terra, já não inspire terror.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo11">
+            <h2>Salmo 11 - O Senhor no Seu Santo Templo</h2>
+            <div class="versiculos">
+                <p data-verses="4">O Senhor está no seu santo templo; o Senhor tem o seu trono nos céus. Os seus olhos observam; os seus olhos examinam os filhos dos homens.</p>
+                <p data-verses="7">Pois o Senhor é justo e ama a justiça; os retos verão a sua face.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo12">
+            <h2>Salmo 12 - As Palavras Puras do Senhor</h2>
+            <div class="versiculos">
+                <p data-verses="6-7">As palavras do Senhor são puras, são como prata purificada num forno, sete vezes refinada. Tu, Senhor, nos guardarás; dessa geração nos protegerás para sempre.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo13">
+            <h2>Salmo 13 - Até Quando, Senhor?</h2>
+            <div class="versiculos">
+                <p data-verses="1, 5-6">Até quando, Senhor? Tu me esquecerás para sempre? Até quando esconderás de mim o teu rosto? Eu, porém, confio no teu amor; o meu coração exulta na tua salvação. Cantarei ao Senhor, pois me foi muito bom.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo14">
+            <h2>Salmo 14 - A Insensatez do Ateu</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Diz o tolo em seu coração: 'Deus não existe'. Corromperam-se e cometeram atos detestáveis; não há ninguém que faça o bem. O Senhor olha dos céus para os filhos do homem, para ver se há alguém que tenha entendimento, alguém que busque a Deus. Todos se desviaram, igualmente se corromperam; não há ninguém que faça o bem, não há nem um sequer.</p>
+                <p data-verses="7">Oh, se de Sião viesse o livramento de Israel! Quando o Senhor restaurar o seu povo, Jacó exultará! Israel se regozijará!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo15">
+            <h2>Salmo 15 - O Caráter do Habitante do Monte Santo</h2>
+            <div class="versiculos">
+                <p data-verses="1-2, 5">Senhor, quem habitará no teu santuário? Quem poderá morar no teu santo monte? Aquele que é íntegro em sua conduta e pratica o que é justo, que de coração fala a verdade. Quem faz isso jamais será abalado.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo16">
+            <h2>Salmo 16 - A Herança Eterna</h2>
+            <div class="versiculos">
+                <p data-verses="5-6">Senhor, tu és a minha porção e o meu cálice; és tu que garantes o meu futuro. As divisas caíram para mim em lugares agradáveis: Tenho uma bela herança!</p>
+                <p data-verses="8">Sempre tenho o Senhor diante de mim. Com ele à minha direita, não serei abalado.</p>
+                <p data-verses="11">Tu me farás conhecer a vereda da vida, a alegria plena da tua presença, eterno prazer à tua direita.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo17">
+            <h2>Salmo 17 - A Oração de um Coração Íntegro</h2>
+            <div class="versiculos">
+                <p data-verses="6">Eu te invoco, ó Deus, pois tu me respondes; inclina para mim os teus ouvidos e ouve a minha oração.</p>
+                <p data-verses="8">Guarda-me como à menina dos teus olhos; esconde-me à sombra das tuas asas.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo18">
+            <h2>Salmo 18 - O Cântico de Livramento de Davi</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Eu te amo, ó Senhor, minha força. O Senhor é a minha rocha, a minha fortaleza e o meu libertador; o meu Deus é o meu rochedo, em quem me refugio. Ele é o meu escudo e o poder que me salva, a minha torre alta. Invoco o Senhor, que é digno de louvor, e estou salvo dos meus inimigos.</p>
+                <p data-verses="28">Tu, Senhor, manténs acesa a minha lâmpada; o meu Deus transforma em luz as minhas trevas.</p>
+                <p data-verses="46">Viva o Senhor! Bendita seja a minha Rocha! Exaltado seja Deus, o meu Salvador!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo19">
+            <h2>Salmo 19 - A Revelação de Deus na Criação e na Lei</h2>
+            <div class="versiculos">
+                <p data-verses="1">Os céus declaram a glória de Deus; o firmamento proclama a obra das suas mãos.</p>
+                <p data-verses="7-8">A lei do Senhor é perfeita e revigora a alma. Os testemunhos do Senhor são dignos de confiança e tornam sábios os inexperientes. Os preceitos do Senhor são justos e dão alegria ao coração. Os mandamentos do Senhor são límpidos e trazem luz aos olhos.</p>
+                <p data-verses="14">Sejam agradáveis as palavras da minha boca e a meditação do meu coração perante ti, Senhor, minha Rocha e meu Resgatador!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo20">
+            <h2>Salmo 20 - Oração pela Vitória do Rei</h2>
+            <div class="versiculos">
+                <p data-verses="1">O Senhor te responda no dia da angústia; o nome do Deus de Jacó te proteja!</p>
+                <p data-verses="5">Celebraremos a tua vitória e ergueremos a nossa bandeira em nome do nosso Deus. Que o Senhor atenda a todos os teus pedidos!</p>
+                <p data-verses="7">Alguns confiam em carros e outros em cavalos, mas nós confiamos no nome do Senhor nosso Deus.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo21">
+            <h2>Salmo 21 - Ação de Graças pela Vitória do Rei</h2>
+            <div class="versiculos">
+                <p data-verses="1">Como o rei se alegra na tua força, Senhor! Como exulta por causa da tua vitória!</p>
+                <p data-verses="7">O rei confia no Senhor; por causa da fidelidade do Altíssimo não será abalado.</p>
+                <p data-verses="13">Ergue-te, Senhor, com todo o teu poder! Nós cantaremos e louvaremos o teu poder.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo22">
+            <h2>Salmo 22 - O Grito do Abandonado</h2>
+            <div class="versiculos">
+                <p data-verses="1">Meu Deus! Meu Deus! Por que me abandonaste? Por que estás tão longe de salvar-me, tão longe dos meus gritos de angústia?</p>
+                <p data-verses="16">Cães me rodearam! Um bando de homens maus me cercou! Perfuraram minhas mãos e meus pés.</p>
+                <p data-verses="18">Dividem entre si as minhas roupas e lançam sortes sobre a minha túnica.</p>
+                <p data-verses="27-28">Todos os confins da terra se lembrarão e se voltarão para o Senhor, e todas as famílias das nações se prostrarão diante dele, pois do Senhor é o reino; ele governa as nações.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo23">
+            <h2>Salmo 23 - O Senhor é o Meu Pastor</h2>
+            <div class="versiculos">
+                <p data-verses="1-6">O Senhor é o meu pastor; de nada terei falta. Em verdes pastagens me faz repousar e me conduz a águas tranquilas; restaura-me o vigor. Guia-me nas veredas da justiça por amor do seu nome. Mesmo quando eu andar por um vale de trevas e morte, não temerei perigo algum, pois tu estás comigo; a tua vara e o teu cajado me protegem. Preparas um banquete para mim à vista dos meus inimigos. Tu me honras, ungindo a minha cabeça com óleo e fazendo transbordar o meu cálice. Sei que a bondade e a fidelidade me acompanharão todos os dias da minha vida, e voltarei à casa do Senhor enquanto eu viver.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo24">
+            <h2>Salmo 24 - O Rei da Glória</h2>
+            <div class="versiculos">
+                <p data-verses="1">Do Senhor é a terra e tudo o que nela existe, o mundo e os que nele vivem.</p>
+                <p data-verses="3-4">Quem subirá ao monte do Senhor? Quem há de permanecer no seu santo lugar? Aquele que tem as mãos limpas e o coração puro, que não recorre aos ídolos nem jura por deuses falsos.</p>
+                <p data-verses="10">Quem é esse Rei da Glória? O Senhor dos Exércitos; ele é o Rei da Glória!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo25">
+            <h2>Salmo 25 - Uma Oração por Orientação e Perdão</h2>
+            <div class="versiculos">
+                <p data-verses="4-5">Mostra-me, Senhor, os teus caminhos, ensina-me as tuas veredas. Guia-me na tua verdade e ensina-me, pois tu és Deus, meu Salvador, e a minha esperança está em ti o tempo todo.</p>
+                <p data-verses="7">Não te lembres dos pecados da minha juventude nem das minhas transgressões; lembra-te de mim, porém, segundo a tua misericórdia, por teu amor, ó Senhor.</p>
+                <p data-verses="11">Por amor do teu nome, Senhor, perdoa o meu pecado, que é tão grande.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo26">
+            <h2>Salmo 26 - Uma Vida de Integridade</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Julga-me, Senhor, pois tenho andado com integridade, tenho confiado no Senhor sem vacilar. Sonda-me, Senhor, e prova-me, examina o meu coração e a minha mente; pois o teu amor está sempre diante de mim, e tenho andado continuamente na tua verdade.</p>
+                <p data-verses="11-12">Mas eu levo uma vida íntegra; redime-me e tem misericórdia de mim. Os meus pés estão firmes na vereda plana; nas reuniões de adoração bendirei ao Senhor.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo27">
+            <h2>Salmo 27 - Luz e Salvação</h2>
+            <div class="versiculos">
+                <p data-verses="1">O Senhor é a minha luz e a minha salvação; de quem terei temor? O Senhor é o meu forte refúgio; de quem terei medo?</p>
+                <p data-verses="4">Uma coisa peço ao Senhor e a buscarei: que eu possa habitar na casa do Senhor todos os dias da minha vida, para contemplar a bondade do Senhor e buscar sua orientação no seu templo.</p>
+                <p data-verses="13-14">Creio que verei a bondade do Senhor na terra dos viventes. Espere no Senhor. Seja forte! Coragem! Espere no Senhor.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo28">
+            <h2>Salmo 28 - Oração e Ação de Graças</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">A ti clamo, ó Senhor, minha Rocha; não fiques indiferente para comigo. Se te calares para mim, serei como os que descem à cova. Ouve a minha súplica quando a ti clamo por socorro, quando ergo as minhas mãos para o teu Lugar Santíssimo.</p>
+                <p data-verses="6-7">Bendito seja o Senhor, pois ouviu as minhas súplicas. O Senhor é a minha força e o meu escudo; nele o meu coração confia, e dele recebo ajuda. Meu coração exulta de alegria, e com o meu cântico lhe darei graças.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo29">
+            <h2>Salmo 29 - A Voz do Senhor na Tempestade</h2>
+            <div class="versiculos">
+                <p data-verses="3-4">A voz do Senhor sobre as águas; o Deus da glória troveja, o Senhor troveja sobre as muitas águas. A voz do Senhor é poderosa; a voz do Senhor é majestosa.</p>
+                <p data-verses="10-11">O Senhor reina soberano sobre o dilúvio; o Senhor reina soberano para sempre. O Senhor dá força ao seu povo; o Senhor abençoa com paz ao seu povo.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo30">
+            <h2>Salmo 30 - O Choro Permanecerá uma Noite</h2>
+            <div class="versiculos">
+                <p data-verses="5">Pois o seu rancor dura só um instante, mas o seu favor dura a vida toda; o choro pode persistir uma noite, mas de manhã irrompe a alegria.</p>
+                <p data-verses="11-12">Tu converteste o meu pranto em dança, a minha veste de lamento em veste de alegria, para que o meu coração cante louvores a ti e não se cale. Senhor, meu Deus, eu te darei louvor para sempre.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo31">
+            <h2>Salmo 31 - Nas Tuas Mãos Entrego o Meu Espírito</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Em ti, Senhor, me refugio; nunca permitas que eu seja humilhado; livra-me pela tua justiça. Inclina para mim os teus ouvidos; vem apressar o meu livramento! Sê a minha rocha protetora, a fortaleza onde eu esteja seguro.</p>
+                <p data-verses="5">Nas tuas mãos entrego o meu espírito; resgata-me, Senhor, Deus da verdade.</p>
+                <p data-verses="14-15">Mas eu confio em ti, Senhor, e digo: 'Tu és o meu Deus'. Os meus dias estão nas tuas mãos; livra-me das mãos dos meus inimigos e dos que me perseguem.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo32">
+            <h2>Salmo 32 - A Bem-Aventurança do Perdão</h2>
+            <div class="versiculos">
+                <p data-verses="1-5">Como é feliz aquele que tem suas transgressões perdoadas e seus pecados apagados! Como é feliz aquele a quem o Senhor não atribui culpa e em quem não há hipocrisia! Enquanto eu mantive escondidos os meus pecados, o meu corpo definhava de tanto gemer. Pois de dia e de noite a tua mão pesava sobre mim; minha força foi-se esgotando como em tempo de seca. Então reconheci diante de ti o meu pecado e não encobri as minhas culpas. Eu disse: 'Confessarei as minhas transgressões ao Senhor', e tu perdoaste a culpa do meu pecado.</p>
+                <p data-verses="7-8">Tu és o meu esconderijo; tu me preservarás dos problemas e me cercarás de canções de livramento. Eu o instruirei e o ensinarei no caminho que você deve seguir; eu o aconselharei e cuidarei de você.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo33">
+            <h2>Salmo 33 - Cântico de Louvor à Soberania de Deus</h2>
+            <div class="versiculos">
+                <p data-verses="4">Pois a palavra do Senhor é verdadeira, e ele é fiel em tudo o que faz.</p>
+                <p data-verses="6">Mediante a palavra do Senhor foram feitos os céus, e os corpos celestes, pelo sopro de sua boca.</p>
+                <p data-verses="12">Como é feliz a nação cujo Deus é o Senhor, o povo que ele escolheu para sua herança!</p>
+                <p data-verses="20-22">Nossa esperança está no Senhor; ele é o nosso auxílio e a nossa proteção. Nele se alegra o nosso coração, pois confiamos no seu santo nome. Esteja sobre nós o teu amor, Senhor, como está em ti a nossa esperança.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo34">
+            <h2>Salmo 34 - O Senhor Livra os Seus</h2>
+            <div class="versiculos">
+                <p data-verses="4">Busquei o Senhor, e ele me respondeu; livrou-me de todos os meus temores.</p>
+                <p data-verses="8">Provem e vejam como o Senhor é bom. Como é feliz o homem que nele se refugia!</p>
+                <p data-verses="15">Os olhos do Senhor voltam-se para os justos e os seus ouvidos estão atentos ao seu grito de socorro.</p>
+                <p data-verses="18-19">O Senhor está perto dos que têm o coração quebrantado e salva os de espírito abatido. O justo passa por muitas adversidades, mas o Senhor o livra de todas.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo35">
+            <h2>Salmo 35 - Oração por Livramento dos Inimigos</h2>
+            <div class="versiculos">
+                <p data-verses="1">Contende, Senhor, com os que contendem comigo; luta contra os que lutam contra mim.</p>
+                <p data-verses="9-10">A minha alma se alegrará no Senhor e exultará na sua salvação. Todo o meu ser exclamará: 'Quem se compara a ti, Senhor? Tu livras os necessitados dos que são mais fortes do que eles, os necessitados e os pobres dos que os exploram.'</p>
+                <p data-verses="27-28">Cantem sempre de alegria os que desejam a minha retidão! Cantem sempre: 'O Senhor seja engrandecido, ele que deseja o bem-estar do seu servo!' E a minha língua proclamará a tua justiça e o teu louvor todo o dia.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo36">
+            <h2>Salmo 36 - A Misericórdia e a Fidelidade de Deus</h2>
+            <div class="versiculos">
+                <p data-verses="5-7">A tua misericórdia, Senhor, chega até os céus; a tua fidelidade até as nuvens. A tua justiça é firme como as altas montanhas; os teus juízos são profundos como o oceano. Tu, Senhor, preservas tanto os homens quanto os animais. Como é preciosa a tua misericórdia, ó Deus! Os homens encontram refúgio à sombra das tuas asas.</p>
+                <p data-verses="9">Pois em ti está a fonte da vida; graças à tua luz, vemos a luz.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo37">
+            <h2>Salmo 37 - Não se Aborreça com os Ímpios</h2>
+            <div class="versiculos">
+                <p data-verses="3-5">Confia no Senhor e faz o bem; assim você habitará na terra e desfrutará segurança. Deleite-se no Senhor, e ele atenderá aos desejos do seu coração. Entregue o seu caminho ao Senhor; confie nele, e ele agirá.</p>
+                <p data-verses="7">Descanse no Senhor e aguarde por ele com paciência; não se aborreça com o sucesso dos outros, nem com aqueles que maquinam o mal.</p>
+                <p data-verses="23-25">O Senhor firma os passos de um homem, quando a conduta deste o agrada; ainda que tropece, não cairá, pois o Senhor o toma pela mão. Já fui jovem e agora sou velho, mas nunca vi o justo desamparado nem seus filhos mendigando o pão.</p>
+                <p data-verses="39-40">A salvação dos justos vem do Senhor; ele é a sua fortaleza no tempo da angústia. O Senhor os ajuda e os livra; ele os livra dos ímpios e os salva, porque nele se refugiam.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo38">
+            <h2>Salmo 38 - O Peso do Pecado</h2>
+            <div class="versiculos">
+                <p data-verses="1">Senhor, não me repreendas no teu furor nem me disciplines no teu wrath.</p>
+                <p data-verses="4">As minhas culpas me afogam; são um fardo pesado demais para eu suportar.</p>
+                <p data-verses="9">Senhor, diante de ti está todo o meu desejo; o meu gemido não te é oculto.</p>
+                <p data-verses="15">Em ti, Senhor, eu espero; tu responderás, ó Senhor, meu Deus.</p>
+                <p data-verses="21-22">Não me abandones, Senhor! Não fiques longe de mim, meu Deus! Apressa-te em ajudar-me, Senhor, meu Salvador!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo39">
+            <h2>Salmo 39 - A Brevidade da Vida</h2>
+            <div class="versiculos">
+                <p data-verses="4-5">Faze-me conhecer, Senhor, o fim da minha vida e o número dos meus dias, para que eu saiba quão frágil sou. Deste aos meus dias o comprimento de um palmo; a duração da minha vida é nada diante de ti. De fato, o homem não passa de um sopro.</p>
+                <p data-verses="7">Mas agora, Senhor, que hei de esperar? A minha esperança está em ti.</p>
+                <p data-verses="12-13">Ouve a minha oração, Senhor! Escuta o meu cry for help! Não te cales diante das minhas lágrimas, pois sou teu hóspede, um peregrino como todos os meus antepassados. Desvia de mim o teu olhar, para que eu tenha alegria, antes que eu parta e não exista mais.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo40">
+            <h2>Salmo 40 - Esperei com Paciência no Senhor</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Esperei com paciência no Senhor; ele se inclinou para mim e ouviu o meu clamor. Ele me tirou de um poço de destruição, de um tremedal de lama; pôs os meus pés sobre uma rocha e firmou-me num local seguro. Pôs um novo cântico na minha boca, um hino de louvor ao nosso Deus. Muitos verão essas coisas, temerão e confiarão no Senhor.</p>
+                <p data-verses="8">Agrado em fazer a tua vontade, ó meu Deus; a tua lei está no fundo do meu coração.</p>
+                <p data-verses="16-17">Que todos os que te buscam se alegrem e se regozijem em ti; que os que amam a tua salvação digam sempre: 'O Senhor é engrandecido!' Quanto a mim, sou pobre e necessitado, mas o Senhor preocupa-se comigo. Tu és o meu auxílio e o meu libertador; meu Deus, não te demores!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo41">
+            <h2>Salmo 41 - Bem-Aventurado o que se Importa com o Pobre</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Como é feliz aquele que se interessa pelo pobre! O Senhor o livra em tempos de adversidade. O Senhor o protegerá e preservará a sua vida; ele o fará feliz na terra e não o entregará ao desejo dos seus inimigos. O Senhor o susterá em seu leito de enfermidade e o restaurará da sua cama de doença.</p>
+                <p data-verses="9">Até o meu amigo íntimo, em quem eu confiava, que comia do meu pão, levantou contra mim o seu calcanhar.</p>
+                <p data-verses="12-13">Graças te dou, Senhor, de todo o coração, porque me ouviste; diante dos deuses a ti canto louvores. Bendito seja o Senhor, o Deus de Israel, de eternidade a eternidade! Amém e amém!</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo42">
+            <h2>Salmo 42 - Sede de Deus</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Como o veado anseia por águas correntes, a minha alma anseia por ti, ó Deus. A minha alma tem sede de Deus, do Deus vivo. Quando poderei entrar para apresentar-me a Deus?</p>
+                <p data-verses="5">Por que você está assim tão triste, ó minha alma? Por que está assim tão perturbada dentro de mim? Ponha a sua esperança em Deus! Pois ainda o louvarei, ele, que é o meu Salvador e o meu Deus.</p>
+                <p data-verses="8">O Senhor concede o seu amor de dia e de noite; a sua canção está comigo, é uma oração ao Deus da minha vida.</p>
+                <p data-verses="11">Por que você está assim tão triste, ó minha alma? Por que está assim tão perturbada dentro de mim? Ponha a sua esperança em Deus! Pois ainda o louvarei, ele, que é o meu Salvador e o meu Deus.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo43">
+            <h2>Salmo 43 - Luz e Verdade</h2>
+            <div class="versiculos">
+                <p data-verses="3">Manda a tua luz e a tua verdade, para que me guiem e me levem ao teu santo monte, ao lugar onde habitas.</p>
+                <p data-verses="5">Por que você está assim tão triste, ó minha alma? Por que está assim tão perturbada dentro de mim? Ponha a sua esperança em Deus! Pois ainda o louvarei, ele, que é o meu Salvador e o meu Deus.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo44">
+            <h2>Salmo 44 - Por que Nos Escondes a Tua Face?</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Os nossos ouvidos ouviram, ó Deus, os nossos pais nos contaram os feitos que realizaste no tempo deles, nos dias da antiguidade. Foi a tua mão que expulsou as nações para estabelecê-los; foste tu que afligiste os povos para estender o seu território.</p>
+                <p data-verses="23-26">Desperta, Senhor! Por que dormes? Acorda! Não nos rejeites para sempre. Por que escondes o teu rosto e esqueces a nossa miséria e a nossa opressão? A nossa alma está abatida no pó; o nosso corpo apega-se ao pó. Levanta-te e vem socorrer-nos! Resgata-nos por causa do teu amor leal.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo45">
+            <h2>Salmo 45 - Cântico de Amor Nupcial</h2>
+            <div class="versiculos">
+                <p data-verses="2">És o mais notável entre os homens; derramou-se graça em teus lábios, pois Deus te abençoou para sempre.</p>
+                <p data-verses="6-7">O teu trono, ó Deus, subsiste para todo o sempre; cetro de justiça é o cetro do teu reino. Amas a justiça e odeias a iniquidade; por isso Deus, o teu Deus, escolheu-te dentre os teus companheiros, ungindo-te com óleo de alegria.</p>
+                <p data-verses="11">O rei está encantado com a tua beleza; honre-o, pois ele é o seu senhor.</p>
+                <p data-verses="17">Perpetuarei a tua lembrança por todas as gerações; por isso as nações sempre te louvarão para todo o sempre.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo46">
+            <h2>Salmo 46 - Deus é o Nosso Refúgio</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Deus é o nosso refúgio e a nossa fortaleza, auxílio sempre presente na adversidade. Por isso não temeremos, ainda que a terra trema e os montes afundem no coração do mar, ainda que estrondem as suas águas turbulentas e os montes sejam sacudidos pela sua fúria.</p>
+                <p data-verses="7">O Senhor dos Exércitos está conosco; o Deus de Jacó é a nossa fortaleza.</p>
+                <p data-verses="10-11">Parem de lutar e saibam que eu sou Deus! Serei exaltado entre as nações, serei exaltado na terra. O Senhor dos Exércitos está conosco; o Deus de Jacó é a nossa fortaleza.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo47">
+            <h2>Salmo 47 - O Senhor, o Rei de Toda a Terra</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Batem palmas, todos os povos; celebrem a Deus com cantos de alegria! Pois o Senhor Altíssimo é temível, é o grande Rei sobre toda a terra!</p>
+                <p data-verses="7-9">Cantem louvores a Deus, cantem louvores; cantem louvores ao nosso Rei, cantem louvores! Porque Deus é o Rei de toda a terra, cantem louvores com harmonia e arte. Deus reina sobre as nações; Deus está assentado no seu santo trono.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo48">
+            <h2>Salmo 48 - A Cidade do Grande Rei</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">Grande é o Senhor, e mui digno de ser louvado, na cidade do nosso Deus, no seu santo monte. É belo e majestoso o monte Sião, a alegria de toda a terra.</p>
+                <p data-verses="9-10">No teu templo, ó Deus, meditamos no teu amor leal. Como o teu nome, ó Deus, o teu louvor alcança os confins da terra; a tua mão direita está cheia de justiça.</p>
+                <p data-verses="14">Pois este Deus é o nosso Deus para todo o sempre; ele será nosso guia até o fim.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo49">
+            <h2>Salmo 49 - A Inutilidade das Riquezas</h2>
+            <div class="versiculos">
+                <p data-verses="1-3">Ouçam isto, todos os povos; escutem, todos os habitantes do mundo, tanto plebeus como nobres, ricos e pobres alike: A minha boca falará palavras de sabedoria; o que o coração me ditar será de entendimento.</p>
+                <p data-verses="7-8">Ninguém pode de forma alguma redimir seu irmão nem pagar a Deus o preço de sua vida, pois o resgate de uma vida é caríssimo, e jamais se fará isso.</p>
+                <p data-verses="15">Mas Deus redimirá a minha vida da sepultura; com certeza me levará para si.</p>
+                <p data-verses="20">O homem que tem riquezas, mas não tem entendimento, é como os animais que perecem.</p>
+            </div>
+        </div>
+        <div class="salmo" id="salmo50">
+            <h2>Salmo 50 - O Juízo de Deus Sobre o Seu Povo</h2>
+            <div class="versiculos">
+                <p data-verses="1-2">O Poderoso, Deus, o Senhor, falou e convocou a terra, do nascimento do sol até o seu ocaso. De Sião, perfeita em beleza, Deus resplandece.</p>
+                <p data-verses="9-10">Não aceitarei novilho da tua casa nem bodes dos teus currais, pois são meus todos os animais da floresta, e os rebanhos aos milhares sobre as montanhas.</p>
+                <p data-verses="14-15">Ofereça a Deus em sacrifício ações de graças e cumpra os seus votos para com o Altíssimo. Invoca-me no dia da angústia; eu te livrarei, e tu me honrarás.</p>
+                <p data-verses="23">Quem me oferece sua gratidão como sacrifício honra-me, e eu mostrarei a salvação de Deus ao que anda nos meus caminhos.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Salmos Seleccionados. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
