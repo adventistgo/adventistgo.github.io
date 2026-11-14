@@ -212,8 +212,8 @@ footer em { font-family: var(--serif); font-size: 18px; color: var(--navy); }
           <input id="f-name" name="name" autocomplete="name" placeholder="María González">
         </div>
         <div class="field">
-          <label for="f-phone">WhatsApp <span class="hint">con código de área</span></label>
-          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="387 123 4567">
+          <label for="f-phone">WhatsApp
+          <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel">
         </div>
       </div>
       <div class="songs" id="songs"></div>
@@ -275,7 +275,7 @@ footer em { font-family: var(--serif); font-size: 18px; color: var(--navy); }
 
 <script>
 const CHURCH_WA = "5493874522981";
-const MAX_SONGS = 3;
+const MAX_SONGS = 2;
 const ACCOMP = ["A capela", "Pista instrumental", "Piano / teclado", "Guitarra acústica", "Violín / cuerdas", "Instrumento de viento", "Otro"];
 const $ = (id) => document.getElementById(id);
 const waLink = (text) => "https://wa.me/" + CHURCH_WA + (text ? "?text=" + encodeURIComponent(text) : "");
