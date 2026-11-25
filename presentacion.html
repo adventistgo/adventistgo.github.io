@@ -1001,6 +1001,31 @@ section.verse { height: 200vh; height: 200svh; }
   .hero-phone .device { --dscale: 0.738; transform-origin: top left; }
   .hero-phone .glow { width: 360px; height: 460px; }
 }
+
+/* ================= portada: color en las primeras diapositivas y teléfono flotando ================= */
+.s-title .hue .ch { text-shadow: 0 0 28px color-mix(in srgb, currentColor 35%, transparent); }
+.slide.on[data-fx="rise"] .hue .ch { animation: ch-rise 950ms var(--ease-out) both, ch-shine 4.2s ease-in-out infinite; animation-delay: calc(var(--i) * 26ms + 120ms), calc(var(--i) * 55ms + 1.4s); }
+@keyframes ch-shine { 0%, 62%, 100% { filter: none; } 31% { filter: brightness(1.55) saturate(1.2); } }
+@keyframes phone-float { 0%, 100% { transform: translateY(0) rotate(-0.8deg); } 50% { transform: translateY(-14px) rotate(0.8deg); } }
+.js-motion .hero-phone .device-fit { animation: phone-float 7s ease-in-out infinite; }
+.hero-phone .glow { animation: glow-breathe 7s ease-in-out infinite; }
+@keyframes glow-breathe { 0%, 100% { opacity: 0.85; scale: 1; } 50% { opacity: 1; scale: 1.06; } }
+@media (prefers-reduced-motion: reduce) { .js-motion .hero-phone .device-fit, .hero-phone .glow, .slide.on[data-fx="rise"] .hue .ch { animation: none; } }
+
+/* ================= formulario de contacto y enlace a servicios ================= */
+.cform { display: grid; gap: var(--space-md); width: min(100%, 520px); margin-inline: auto; justify-content: stretch; align-items: stretch; text-align: left; }
+.cform .cf-head { display: grid; gap: 4px; }
+.cform .cf-head b { color: var(--color-night-ink); font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+.cform label { display: grid; gap: 6px; font-weight: 600; color: var(--color-night-ink); }
+.cform input, .cform textarea { font: inherit; font-size: 1rem; color: var(--color-night-ink); background: rgb(255 255 255 / 0.06); border: 1px solid var(--color-night-rule); border-radius: 12px; padding: 12px 14px; resize: vertical; transition: border-color 200ms, background 200ms; }
+.cform input:focus, .cform textarea:focus { outline: none; border-color: var(--color-night-link); background: rgb(255 255 255 / 0.09); }
+.cform .cf-row { display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: center; justify-content: space-between; }
+.cform .btn { background: var(--color-accent); color: var(--color-accent-ink); border: 0; }
+.hire { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: var(--space-xl); color: var(--color-night-muted); font-weight: 500; text-decoration: none; }
+.hire b { display: inline-flex; align-items: center; gap: 6px; color: var(--color-night-ink); font-weight: 700; }
+.hire svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: translate 250ms var(--ease-out); }
+.hire:hover b { color: var(--color-night-link); }
+.hire:hover svg { translate: 4px 0; }
 </style>
 
 <script type="application/ld+json">
@@ -1117,9 +1142,13 @@ section.verse { height: 200vh; height: 200svh; }
       <h2 data-i="dlH">Llévala contigo.</h2>
       <p class="lead" data-i="dlP">Gratis para Android y iPhone. La Biblia y el comentario funcionan sin internet.</p>
       <div class="stores" data-stores></div>
-      <div class="contact">
-        <div class="ln"><b data-i="mailLabel">Correo</b><a href="mailto:adventistgo@gmail.com">adventistgo@gmail.com</a></div>
-      </div>
+      <form class="contact cform" id="cform">
+        <div class="cf-head"><b data-i="cfH">Escríbenos</b><span data-i="cfP">Dudas, sugerencias o errores: te respondemos por correo.</span></div>
+        <label><span data-i="cfName">Tu nombre</span><input name="n" autocomplete="name" required></label>
+        <label><span data-i="cfMsg">Tu consulta</span><textarea name="m" rows="4" required></textarea></label>
+        <div class="cf-row"><button class="btn" type="submit" data-i="cfSend">Enviar consulta</button><a href="mailto:adventistgo@gmail.com">adventistgo@gmail.com</a></div>
+      </form>
+      <a class="hire" href="servicios.html"><span data-i="hireQ">¿Necesitas una página web o una app?</span> <b><span data-i="hireL">Conoce mis servicios</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b></a>
     </div>
   </section>
 </main>
@@ -2194,6 +2223,19 @@ if (FINE && !REDUCE) {
   });
 }
 
+/* ================= formulario de contacto: abre el correo ya escrito ================= */
+const CF = {
+  es: { cfH: "Escríbenos", cfP: "Dudas, sugerencias o errores: te respondemos por correo.", cfName: "Tu nombre", cfMsg: "Tu consulta", cfSend: "Enviar consulta", cfSubj: "Consulta desde la web", hireQ: "¿Necesitas una página web o una app?", hireL: "Conoce mis servicios" },
+  pt: { cfH: "Escreva para nós", cfP: "Dúvidas, sugestões ou erros: respondemos por e-mail.", cfName: "Seu nome", cfMsg: "Sua mensagem", cfSend: "Enviar mensagem", cfSubj: "Mensagem pelo site", hireQ: "Precisa de um site ou de um app?", hireL: "Conheça meus serviços" },
+  en: { cfH: "Write to us", cfP: "Questions, ideas or bugs: we reply by email.", cfName: "Your name", cfMsg: "Your message", cfSend: "Send message", cfSubj: "Message from the website", hireQ: "Need a website or an app?", hireL: "See my services" }
+};
+Object.keys(CF).forEach(l => Object.assign(T[l], CF[l]));
+$("cform").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target, n = f.n.value.trim(), m = f.m.value.trim();
+  location.href = `mailto:adventistgo@gmail.com?subject=${encodeURIComponent(`${L().cfSubj} — ${n}`)}&body=${encodeURIComponent(`${m}\n\n— ${n}`)}`;
+});
+
 /* ================= tutorial: un video con capítulos ================= */
 const VT = {
   es: { src: "videos/tutorial.mp4", poster: "videos/tutorial_poster.jpg", play: "Ver el tutorial", kick: "10 capítulos · 2:45 · toca uno para ir directo", chapters: [
@@ -2556,7 +2598,23 @@ function fillSlide(slide, s) {
   }
   const A = chars(s.a), B = chars(s.b, A.n);
   title.innerHTML = `<span class="ln a">${A.html}</span> <span class="ln b">${B.html}</span>`;
+  const g = HUES[slider.data.indexOf(s)];
+  if (g) {
+    const b = title.querySelector(".b"), cs = [...b.querySelectorAll(".ch")];
+    b.classList.add("hue");
+    const mix = (x, y, u) => x.map((v, i) => Math.round(v + (y[i] - v) * u));
+    cs.forEach((c, i) => {
+      const u = cs.length > 1 ? i / (cs.length - 1) : 0, seg = u * (g.length - 1), k = Math.min(g.length - 2, Math.floor(seg));
+      c.style.color = `rgb(${mix(g[k], g[k + 1], seg - k).join(" ")})`;
+    });
+  }
 }
+/* degradado de la segunda línea en las diapositivas 1 a 3 */
+const HUES = [
+  [[78, 161, 255], [126, 224, 255], [190, 160, 255]],
+  [[94, 230, 160], [63, 208, 255]],
+  [[255, 179, 107], [255, 111, 168], [196, 132, 255]]
+];
 
 function enterSlide(n, first) {
   sClear();
