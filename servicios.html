@@ -18,7 +18,10 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body { margin: 0; background: var(--bg-2); color: var(--ink); font: 500 17px/1.6 "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; }
-header { padding: 20px 24px; }
+header { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.langs { display: flex; gap: 4px; background: #fff; border: 2px solid var(--rule); border-radius: 12px; padding: 3px; }
+.langs button { font: inherit; font-weight: 800; font-size: .85rem; border: 0; background: none; color: var(--ink-2); padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+.langs button[aria-pressed="true"] { background: var(--accent); color: #fff; }
 .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; text-decoration: none; color: var(--ink); letter-spacing: -0.02em; }
 .logo i { width: 32px; height: 32px; border-radius: 8px; background: var(--ink); color: #fff; display: grid; place-items: center; font-style: normal; font-size: 0.95rem; }
 .logo b { font-weight: 800; } .logo span { color: var(--accent); }
@@ -64,21 +67,23 @@ p strong { color: var(--ink); }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 </style>
+<!-- Contador de visitas (GoatCounter: https://bibliacba.goatcounter.com) -->
+<script data-goatcounter="https://bibliacba.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
-<header><a class="logo" href="index.html"><i>J</i><b>Jonatan<span>Dev</span></b></a></header>
+<header><a class="logo" href="index.html" data-home><i>J</i><b>Jonatan<span>Dev</span></b></a><div class="langs" role="group" aria-label="Idioma"><button type="button" data-lang="es">ES</button><button type="button" data-lang="pt">PT</button><button type="button" data-lang="en">EN</button></div></header>
 <main>
   <div class="card">
-    <div class="buddy-row" aria-hidden="true"><div class="buddy" data-buddy="laptop"></div><div class="bubble">Programando<span class="dots"><i>.</i><i>.</i><i>.</i></span></div></div>
-    <span class="tag">En construcción</span>
-    <h1>Estoy preparando esta página.</h1>
-    <p>Esta página está en construcción. Mientras tanto, puedes contactarme por <strong>correo</strong> o por <strong>WhatsApp</strong> y con gusto conversamos sobre tu proyecto.</p>
+    <div class="buddy-row" aria-hidden="true"><div class="buddy" data-buddy="laptop"></div><div class="bubble"><span data-t="bubble">Programando</span><span class="dots"><i>.</i><i>.</i><i>.</i></span></div></div>
+    <span class="tag" data-t="tag">En construcción</span>
+    <h1 data-t="h1">Estoy preparando esta página.</h1>
+    <p data-t="p">Esta página está en construcción. Mientras tanto, puedes contactarme por <strong>correo</strong> o por <strong>WhatsApp</strong> y con gusto conversamos sobre tu proyecto.</p>
     <div class="bar" role="progressbar" aria-label="Progreso de la página" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><span></span></div>
     <div class="actions">
-      <a class="btn btn-wa" href="https://wa.me/5493874523935?text=Hola%20Jonatan%2C%20quiero%20consultarte%20por%20un%20proyecto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg><span><small>WhatsApp</small>+54 9 387 452-3935</span></a>
-      <a class="btn btn-mail" href="mailto:adventistgo@gmail.com?subject=Consulta%20por%20un%20proyecto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><small>Correo</small>adventistgo@gmail.com</span></a>
+      <a class="btn btn-wa" data-wa href="https://wa.me/5493874523935?text=Hola%20Jonatan%2C%20quiero%20consultarte%20por%20un%20proyecto" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg><span><small>WhatsApp</small>+54 9 387 452-3935</span></a>
+      <a class="btn btn-mail" data-mail href="mailto:adventistgo@gmail.com?subject=Consulta%20por%20un%20proyecto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span><small data-t="mail">Correo</small>adventistgo@gmail.com</span></a>
     </div>
-    <a class="back" href="index.html">← Volver a Biblia + CBA</a>
+    <a class="back" href="index.html" data-home data-t="back">← Volver a Biblia + CBA</a>
   </div>
 </main>
 <script>
@@ -113,7 +118,48 @@ p strong { color: var(--ink); }
       '<ellipse cx="40" cy="74" rx="5" ry="3" fill="#ff8fb3"/><ellipse cx="80" cy="74" rx="5" ry="3" fill="#ff8fb3"/>' +
       MOUTH[P.mouth] + '<circle cx="60" cy="107" r="4" fill="#4ea1ff"/>' + P.front + '</svg>';
   };
+  const T = {
+    es: { title: "JonatanDev · En construcción", bubble: "Programando", tag: "En construcción", h1: "Estoy preparando esta página.",
+      p: "Esta página está en construcción. Mientras tanto, puedes contactarme por <strong>correo</strong> o por <strong>WhatsApp</strong> y con gusto conversamos sobre tu proyecto.",
+      mail: "Correo", back: "← Volver a Biblia + CBA", wa: "Hola Jonatan, quiero consultarte por un proyecto", subj: "Consulta por un proyecto" },
+    pt: { title: "JonatanDev · Em construção", bubble: "Programando", tag: "Em construção", h1: "Estou preparando esta página.",
+      p: "Esta página está em construção. Enquanto isso, você pode falar comigo por <strong>e-mail</strong> ou pelo <strong>WhatsApp</strong> e conversamos com prazer sobre o seu projeto.",
+      mail: "E-mail", back: "← Voltar para Bíblia + CBA", wa: "Olá Jonatan, quero falar sobre um projeto", subj: "Consulta sobre um projeto" },
+    en: { title: "JonatanDev · Under construction", bubble: "Coding", tag: "Under construction", h1: "I'm working on this page.",
+      p: "This page is under construction. In the meantime, you can reach me by <strong>email</strong> or <strong>WhatsApp</strong> and I'll be happy to talk about your project.",
+      mail: "Email", back: "← Back to Bible Adventist", wa: "Hi Jonatan, I'd like to ask about a project", subj: "Question about a project" }
+  };
+  const get = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+  const set = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+  const pick = () => {
+    const q = new URLSearchParams(location.search).get("lang"); if (T[q]) return q;
+    const sv = get("cba-lang"); if (T[sv]) return sv;
+    for (const l of (navigator.languages || [navigator.language || "es"])) { const b = String(l).slice(0, 2).toLowerCase(); if (T[b]) return b; }
+    return "es";
+  };
+  const apply = lang => {
+    const t = T[lang]; document.documentElement.lang = lang; document.title = t.title;
+    document.querySelectorAll("[data-t]").forEach(el => { el.innerHTML = t[el.dataset.t]; });
+    document.querySelectorAll("[data-home]").forEach(a => { a.href = "index.html?lang=" + lang; });
+    document.querySelector("[data-wa]").href = "https://wa.me/5493874523935?text=" + encodeURIComponent(t.wa);
+    document.querySelector("[data-mail]").href = "mailto:adventistgo@gmail.com?subject=" + encodeURIComponent(t.subj);
+    document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  };
+  apply(pick());
+  document.querySelectorAll("[data-lang]").forEach(b => b.addEventListener("click", () => { set("cba-lang", b.dataset.lang); apply(b.dataset.lang); }));
   document.querySelectorAll("[data-buddy]").forEach(b => { b.innerHTML = buddySVG(b.dataset.buddy); });
+})();
+</script>
+<script>
+/* Eventos para GoatCounter: clics en WhatsApp y correo */
+(() => {
+  const ev = (path, title) => { try { window.goatcounter && goatcounter.count({ path, title, event: true }); } catch (e) {} };
+  document.addEventListener("click", e => {
+    const a = e.target.closest("a"); if (!a) return;
+    const h = a.href || "";
+    if (/wa\.me/.test(h)) ev("servicios-whatsapp", "Clic en WhatsApp (servicios)");
+    else if (/^mailto:/.test(h)) ev("servicios-correo", "Clic en correo (servicios)");
+  });
 })();
 </script>
 </body>

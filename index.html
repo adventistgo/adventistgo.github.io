@@ -1114,6 +1114,8 @@ section.spot { background-image: none; }
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 }
 </script>
+<!-- Contador de visitas (GoatCounter: https://bibliacba.goatcounter.com) -->
+<script data-goatcounter="https://bibliacba.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="intro" id="intro" aria-hidden="true"><div class="spark"></div><div class="intro-text"><p class="intro-verse"></p><p class="intro-ref"></p></div></div>
@@ -2755,6 +2757,25 @@ $("year").textContent = new Date().getFullYear();
 navTone();
 applyLang();
 runIntro();
+})();
+</script>
+<script>
+/* Eventos para GoatCounter: clics en tiendas, video y servicios */
+(() => {
+  const ev = (path, title) => { try { window.goatcounter && goatcounter.count({ path, title, event: true }); } catch (e) {} };
+  const appLang = h => /-pt\/|portugues/.test(h) ? "pt" : /bible-adventist|biblecommentary/.test(h) ? "en" : "es";
+  document.addEventListener("click", e => {
+    const a = e.target.closest("a"); if (!a) return;
+    const h = a.href || "";
+    if (/apps\.apple\.com/.test(h)) ev("descarga-app-store-" + appLang(h), "Clic en App Store (" + appLang(h).toUpperCase() + ")");
+    else if (/play\.google\.com/.test(h)) ev("descarga-google-play-" + appLang(h), "Clic en Google Play (" + appLang(h).toUpperCase() + ")");
+    else if (/servicios\.html/.test(h)) {
+      ev("clic-servicios", "Clic en la página de servicios");
+      a.href = "servicios.html?lang=" + (document.documentElement.lang || "es"); // abrir servicios en el mismo idioma
+    }
+  });
+  const v = document.getElementById("vt-video"); let played = false;
+  if (v) v.addEventListener("play", () => { if (played) return; played = true; ev("video-tutorial-" + (document.documentElement.lang || "es"), "Reprodujo el video tutorial"); });
 })();
 </script>
 </body>
